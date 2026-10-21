@@ -4,8 +4,6 @@ GeoScope studies whether language models select the right measurement and mathem
 
 The project combines OC20-Dense initial structures, FAIRchem UMA relaxations, coordinate-derived evidence, and a controlled evaluation of three language models. It separates a correct comparison ID from a correct physical definition, and measures how validation changes the reliability and coverage of accepted answers.
 
-**Status:** computational study completed and independently reviewed. Manuscript preparation remains. No paper or DOI is assigned to this project.
-
 ## Main result
 
 Checking the comparison ID alone still permits invalid uses of a scientific number. Full-definition checking rejects additional errors involving atom selection, frame, alignment, periodic handling, weighting or the selected mathematical relation.
