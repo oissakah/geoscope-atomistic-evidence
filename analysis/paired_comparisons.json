@@ -1,0 +1,470 @@
+[
+  {
+    "model_key": "qwen",
+    "control": "run_only",
+    "method": "full_definition",
+    "comparison_role": "primary",
+    "same_selector_outputs": true,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 81,
+    "control_answerable_numeric_acceptances": 372,
+    "method_answerable_numeric_acceptances": 312,
+    "control_answerable_correct_numeric_answers": 312,
+    "method_answerable_correct_numeric_answers": 312,
+    "bad_numeric_acceptances_prevented": 81,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 60,
+    "lost_control_correct_numeric_answers": 0,
+    "prevention_per_all_cases": 0.04602272727272727,
+    "prevented_fraction_of_control_bad_acceptances": 1.0,
+    "lost_answerable_coverage": 0.05454545454545454,
+    "answerable_coverage_difference": -0.05454545454545454,
+    "answerable_correct_with_proof_difference": 0.0,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.03579545454545455,
+          0.05569602272727271
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          1.0,
+          1.0
+        ],
+        "lost_answerable_coverage": [
+          0.04090909090909091,
+          0.06909090909090909
+        ],
+        "answerable_coverage_difference": [
+          -0.06909090909090909,
+          -0.04090909090909091
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "qwen",
+    "control": "arithmetic_only",
+    "method": "full_definition",
+    "comparison_role": "exploratory",
+    "same_selector_outputs": true,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 365,
+    "control_answerable_numeric_acceptances": 478,
+    "method_answerable_numeric_acceptances": 312,
+    "control_answerable_correct_numeric_answers": 312,
+    "method_answerable_correct_numeric_answers": 312,
+    "bad_numeric_acceptances_prevented": 365,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 166,
+    "lost_control_correct_numeric_answers": 0,
+    "prevention_per_all_cases": 0.20738636363636365,
+    "prevented_fraction_of_control_bad_acceptances": 1.0,
+    "lost_answerable_coverage": 0.1509090909090909,
+    "answerable_coverage_difference": -0.1509090909090909,
+    "answerable_correct_with_proof_difference": 0.0,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.1875,
+          0.22670454545454546
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          1.0,
+          1.0
+        ],
+        "lost_answerable_coverage": [
+          0.13452272727272727,
+          0.17
+        ],
+        "answerable_coverage_difference": [
+          -0.17,
+          -0.13452272727272732
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "qwen",
+    "control": "direct",
+    "method": "full_definition",
+    "comparison_role": "exploratory",
+    "same_selector_outputs": false,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 1448,
+    "control_answerable_numeric_acceptances": 1096,
+    "method_answerable_numeric_acceptances": 312,
+    "control_answerable_correct_numeric_answers": 255,
+    "method_answerable_correct_numeric_answers": 312,
+    "bad_numeric_acceptances_prevented": 1266,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 784,
+    "lost_control_correct_numeric_answers": 125,
+    "prevention_per_all_cases": 0.7193181818181819,
+    "prevented_fraction_of_control_bad_acceptances": 0.8743093922651933,
+    "lost_answerable_coverage": 0.7127272727272728,
+    "answerable_coverage_difference": -0.7127272727272728,
+    "answerable_correct_with_proof_difference": 0.05181818181818182,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.7011363636363637,
+          0.7375
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          0.8585296521873137,
+          0.8897351692690684
+        ],
+        "lost_answerable_coverage": [
+          0.6854545454545454,
+          0.7400227272727272
+        ],
+        "answerable_coverage_difference": [
+          -0.7400227272727272,
+          -0.6854545454545454
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.023636363636363636,
+          0.0809090909090909
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "phi",
+    "control": "run_only",
+    "method": "full_definition",
+    "comparison_role": "primary",
+    "same_selector_outputs": true,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 245,
+    "control_answerable_numeric_acceptances": 305,
+    "method_answerable_numeric_acceptances": 121,
+    "control_answerable_correct_numeric_answers": 121,
+    "method_answerable_correct_numeric_answers": 121,
+    "bad_numeric_acceptances_prevented": 245,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 184,
+    "lost_control_correct_numeric_answers": 0,
+    "prevention_per_all_cases": 0.13920454545454544,
+    "prevented_fraction_of_control_bad_acceptances": 1.0,
+    "lost_answerable_coverage": 0.16727272727272727,
+    "answerable_coverage_difference": -0.16727272727272727,
+    "answerable_correct_with_proof_difference": 0.0,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.12443181818181819,
+          0.15397727272727274
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          1.0,
+          1.0
+        ],
+        "lost_answerable_coverage": [
+          0.14727272727272728,
+          0.18636363636363637
+        ],
+        "answerable_coverage_difference": [
+          -0.18636363636363637,
+          -0.14727272727272728
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "phi",
+    "control": "arithmetic_only",
+    "method": "full_definition",
+    "comparison_role": "exploratory",
+    "same_selector_outputs": true,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 647,
+    "control_answerable_numeric_acceptances": 494,
+    "method_answerable_numeric_acceptances": 121,
+    "control_answerable_correct_numeric_answers": 121,
+    "method_answerable_correct_numeric_answers": 121,
+    "bad_numeric_acceptances_prevented": 647,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 373,
+    "lost_control_correct_numeric_answers": 0,
+    "prevention_per_all_cases": 0.36761363636363636,
+    "prevented_fraction_of_control_bad_acceptances": 1.0,
+    "lost_answerable_coverage": 0.3390909090909091,
+    "answerable_coverage_difference": -0.3390909090909091,
+    "answerable_correct_with_proof_difference": 0.0,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.3477272727272727,
+          0.38636363636363635
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          1.0,
+          1.0
+        ],
+        "lost_answerable_coverage": [
+          0.31636363636363635,
+          0.36456818181818185
+        ],
+        "answerable_coverage_difference": [
+          -0.36456818181818185,
+          -0.31636363636363635
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "phi",
+    "control": "direct",
+    "method": "full_definition",
+    "comparison_role": "exploratory",
+    "same_selector_outputs": false,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 580,
+    "control_answerable_numeric_acceptances": 356,
+    "method_answerable_numeric_acceptances": 121,
+    "control_answerable_correct_numeric_answers": 26,
+    "method_answerable_correct_numeric_answers": 121,
+    "bad_numeric_acceptances_prevented": 555,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 313,
+    "lost_control_correct_numeric_answers": 8,
+    "prevention_per_all_cases": 0.3153409090909091,
+    "prevented_fraction_of_control_bad_acceptances": 0.9568965517241379,
+    "lost_answerable_coverage": 0.28454545454545455,
+    "answerable_coverage_difference": -0.21363636363636362,
+    "answerable_correct_with_proof_difference": 0.08636363636363636,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.29602272727272727,
+          0.3352272727272727
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          0.9428509316770186,
+          0.9700743537406576
+        ],
+        "lost_answerable_coverage": [
+          0.26088636363636364,
+          0.3109090909090909
+        ],
+        "answerable_coverage_difference": [
+          -0.24545454545454543,
+          -0.18181818181818182
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.06997727272727274,
+          0.10272727272727272
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "smol",
+    "control": "run_only",
+    "method": "full_definition",
+    "comparison_role": "primary",
+    "same_selector_outputs": true,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 273,
+    "control_answerable_numeric_acceptances": 345,
+    "method_answerable_numeric_acceptances": 168,
+    "control_answerable_correct_numeric_answers": 168,
+    "method_answerable_correct_numeric_answers": 168,
+    "bad_numeric_acceptances_prevented": 273,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 177,
+    "lost_control_correct_numeric_answers": 0,
+    "prevention_per_all_cases": 0.15511363636363637,
+    "prevented_fraction_of_control_bad_acceptances": 1.0,
+    "lost_answerable_coverage": 0.16090909090909092,
+    "answerable_coverage_difference": -0.16090909090909092,
+    "answerable_correct_with_proof_difference": 0.0,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.13863636363636364,
+          0.1710369318181818
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          1.0,
+          1.0
+        ],
+        "lost_answerable_coverage": [
+          0.13818181818181818,
+          0.18454545454545454
+        ],
+        "answerable_coverage_difference": [
+          -0.18454545454545454,
+          -0.13818181818181818
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "smol",
+    "control": "arithmetic_only",
+    "method": "full_definition",
+    "comparison_role": "exploratory",
+    "same_selector_outputs": true,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 1005,
+    "control_answerable_numeric_acceptances": 720,
+    "method_answerable_numeric_acceptances": 168,
+    "control_answerable_correct_numeric_answers": 168,
+    "method_answerable_correct_numeric_answers": 168,
+    "bad_numeric_acceptances_prevented": 1005,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 552,
+    "lost_control_correct_numeric_answers": 0,
+    "prevention_per_all_cases": 0.5710227272727273,
+    "prevented_fraction_of_control_bad_acceptances": 1.0,
+    "lost_answerable_coverage": 0.5018181818181818,
+    "answerable_coverage_difference": -0.5018181818181818,
+    "answerable_correct_with_proof_difference": 0.0,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.5465909090909091,
+          0.59375
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          1.0,
+          1.0
+        ],
+        "lost_answerable_coverage": [
+          0.47363636363636363,
+          0.5291136363636364
+        ],
+        "answerable_coverage_difference": [
+          -0.5291136363636363,
+          -0.47363636363636363
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  },
+  {
+    "model_key": "smol",
+    "control": "direct",
+    "method": "full_definition",
+    "comparison_role": "exploratory",
+    "same_selector_outputs": false,
+    "cases": 1760,
+    "answerable_cases": 1100,
+    "control_bad_numeric_acceptances": 1036,
+    "control_answerable_numeric_acceptances": 722,
+    "method_answerable_numeric_acceptances": 168,
+    "control_answerable_correct_numeric_answers": 66,
+    "method_answerable_correct_numeric_answers": 168,
+    "bad_numeric_acceptances_prevented": 964,
+    "new_bad_numeric_acceptances": 0,
+    "lost_answerable_numeric_acceptances": 605,
+    "lost_control_correct_numeric_answers": 21,
+    "prevention_per_all_cases": 0.5477272727272727,
+    "prevented_fraction_of_control_bad_acceptances": 0.9305019305019305,
+    "lost_answerable_coverage": 0.55,
+    "answerable_coverage_difference": -0.5036363636363637,
+    "answerable_correct_with_proof_difference": 0.09272727272727273,
+    "bootstrap": {
+      "source_groups": 55,
+      "samples": 1000,
+      "seed": 20261021,
+      "intervals": {
+        "prevention_per_all_cases": [
+          0.5210227272727272,
+          0.5738636363636364
+        ],
+        "prevented_fraction_of_control_bad_acceptances": [
+          0.9148839086802787,
+          0.9446178414397269
+        ],
+        "lost_answerable_coverage": [
+          0.518159090909091,
+          0.5790909090909091
+        ],
+        "answerable_coverage_difference": [
+          -0.5409090909090909,
+          -0.46454545454545454
+        ],
+        "answerable_correct_with_proof_difference": [
+          0.07272727272727272,
+          0.11454545454545455
+        ]
+      },
+      "policy": "Paired whole-source-group percentile bootstrap; selection sharing is identified separately",
+      "multiplicity_adjusted": false
+    }
+  }
+]

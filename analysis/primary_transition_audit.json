@@ -1,0 +1,26 @@
+{
+  "qwen": {
+    "correct_with_proof_preserved": 312,
+    "run_accepted_full_rejected": 81,
+    "prevented_on_answerable": 60,
+    "prevented_wrong_verdict": 42,
+    "prevented_coincidentally_correct_verdict_unlicensed": 39,
+    "prevented_on_insufficient": 21
+  },
+  "phi": {
+    "run_accepted_full_rejected": 245,
+    "prevented_on_answerable": 184,
+    "prevented_coincidentally_correct_verdict_unlicensed": 129,
+    "correct_with_proof_preserved": 121,
+    "prevented_on_insufficient": 61,
+    "prevented_wrong_verdict": 116
+  },
+  "smol": {
+    "run_accepted_full_rejected": 273,
+    "prevented_on_answerable": 177,
+    "prevented_coincidentally_correct_verdict_unlicensed": 120,
+    "prevented_wrong_verdict": 153,
+    "prevented_on_insufficient": 96,
+    "correct_with_proof_preserved": 168
+  }
+}

@@ -1,0 +1,1048 @@
+{
+  "right_label_wrong_witness": [
+    {
+      "case_id": "fs_341cb47d54ab86a7ced5b695",
+      "group_id": "41_6957_10",
+      "family": "missing_adsorbate_bound",
+      "presentation": "structured",
+      "target_metric": "adsorbate_frame_rmsd",
+      "claim": "For endpoint pair P_750f261c, the adsorbate RMSD in the specified surface frame, with equal atom weights and the supplied atom sets, is at most 1.891432422595985694570127825 angstrom.",
+      "expected": "SUPPORTED",
+      "valid_proofs": [
+        {
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E_6743df66"
+          ],
+          "operation": "adsorbate_upper"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_0e4e22c4\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\":[\"E_0e4e22c4\"],\"operation\":\"none\"}",
+      "direct_trace": {
+        "case_id": "fs_341cb47d54ab86a7ced5b695",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_0e4e22c4"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "6b39d1bc5fce5edcaf8d10a0ae5cdcd68abc4d603c39de632580d36cfca37af3",
+        "request_signature": "40bd6cf4c1df5e54799bb8a9768fb6201882be24f86fbb0a1bfcb4a9c5e2a7c8"
+      },
+      "run_only_trace": {
+        "case_id": "fs_341cb47d54ab86a7ced5b695",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "INVALID_FORMAT",
+        "verdict": null,
+        "evidence_ids": [],
+        "operation": "none",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": false,
+        "tool_action": "not_calculated",
+        "raw_output_sha256": "fb35ddc40f3722058a3e541dabaa3b7caccb4f1c37fa5d8adf4186de37a28c0b",
+        "request_signature": "ff6f351509e4fa81d6d9479ee3777a0b04addd5a6c9ba5d3d94a1ed2b3e9788e"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_341cb47d54ab86a7ced5b695",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "INVALID_FORMAT",
+        "verdict": null,
+        "evidence_ids": [],
+        "operation": "none",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": false,
+        "tool_action": "not_calculated",
+        "raw_output_sha256": "fb35ddc40f3722058a3e541dabaa3b7caccb4f1c37fa5d8adf4186de37a28c0b",
+        "request_signature": "ff6f351509e4fa81d6d9479ee3777a0b04addd5a6c9ba5d3d94a1ed2b3e9788e"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_0e4e22c4",
+          "requested_pair_matches": false,
+          "definition_kind": "adsorbate_frame",
+          "value": 0.7000000000000001,
+          "unit": "angstrom"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_f0131ede5cca0b4b9fe81469",
+      "group_id": "15_3994_47",
+      "family": "missing_adsorbate_bound",
+      "presentation": "report",
+      "target_metric": "adsorbate_frame_rmsd",
+      "claim": "For endpoint pair P_408cbc5b, the adsorbate RMSD in the specified surface frame, with equal atom weights and the supplied atom sets, is at most 3.197755062753291814779078022 angstrom.",
+      "expected": "SUPPORTED",
+      "valid_proofs": [
+        {
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E_a93f401d"
+          ],
+          "operation": "adsorbate_upper"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_a93f401d\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\": [\"E_a93f401d\"], \"operation\": \"adsorbate_upper\"}",
+      "direct_trace": {
+        "case_id": "fs_f0131ede5cca0b4b9fe81469",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_a93f401d"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "c4634fb112fa4c1aef7a8dc68921219b60ff4cbb12507a8a70940cd1fbf68873",
+        "request_signature": "e73f05f2bd50a9a43ff6b7ee7884d6b5921e1b5e0d10bd020ddd997bb48d6b1c"
+      },
+      "run_only_trace": {
+        "case_id": "fs_f0131ede5cca0b4b9fe81469",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_a93f401d"
+        ],
+        "operation": "adsorbate_upper",
+        "interval_A": [
+          "0",
+          "2.5582040502026334518232624176229784306688014818677"
+        ],
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "selected_interval_calculated",
+        "raw_output_sha256": "8158a6b8b255b3100cbe06a07ad229a28f7999282a3f02669b657b3f3fd0e4e2",
+        "request_signature": "5fcbc9e9710f868ce176a430c940bb24b96c685cfd20149ff822b36476600284"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_f0131ede5cca0b4b9fe81469",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_a93f401d"
+        ],
+        "operation": "adsorbate_upper",
+        "interval_A": [
+          "0",
+          "2.5582040502026334518232624176229784306688014818677"
+        ],
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "selected_interval_calculated",
+        "raw_output_sha256": "8158a6b8b255b3100cbe06a07ad229a28f7999282a3f02669b657b3f3fd0e4e2",
+        "request_signature": "5fcbc9e9710f868ce176a430c940bb24b96c685cfd20149ff822b36476600284"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_a93f401d",
+          "requested_pair_matches": true,
+          "definition_kind": "mobile_frame",
+          "value": 1.100875742515018,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_a93f401d",
+          "requested_pair_matches": true,
+          "definition_kind": "mobile_frame",
+          "value": 1.100875742515018,
+          "unit": "angstrom"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_959c001a7b9795b33ce772ed",
+      "group_id": "15_9991_19",
+      "family": "unit_conversion",
+      "presentation": "report",
+      "target_metric": "adsorbate_frame_rmsd",
+      "claim": "For endpoint pair P_b3de184a, the adsorbate RMSD in the specified surface frame, with equal atom weights and the supplied atom sets, is at least 1.9403003580899658 angstrom.",
+      "expected": "SUPPORTED",
+      "valid_proofs": [
+        {
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E_49bd909b"
+          ],
+          "operation": "value"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_b0912467\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\": [\"E_b0912467\"], \"operation\": \"mobile_lower\"}",
+      "direct_trace": {
+        "case_id": "fs_959c001a7b9795b33ce772ed",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_b0912467"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "0c29388724d001ac7b6893e6005b7cd0b5b0dee46e96b9c14ecf02e8e082b97a",
+        "request_signature": "a29ce3dffc7812ffb60315c6d5be47e06c9f92f0331f6da2b045cd7d1edcbeb3"
+      },
+      "run_only_trace": {
+        "case_id": "fs_959c001a7b9795b33ce772ed",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_UNRESOLVED",
+        "verdict": null,
+        "evidence_ids": [
+          "E_b0912467"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": [
+          "0.012603039206692476532458411124139542531739749133983",
+          null
+        ],
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_bound_does_not_settle_claim",
+        "raw_output_sha256": "bf06961a5a3293459d983032654a9f04a4b195f479ab213f21a506101b41e21b",
+        "request_signature": "59e070346c0d3cb88e0a2b1e7147ecac259853f7d14819dd75444b7f087b3636"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_959c001a7b9795b33ce772ed",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_b0912467"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "bf06961a5a3293459d983032654a9f04a4b195f479ab213f21a506101b41e21b",
+        "request_signature": "59e070346c0d3cb88e0a2b1e7147ecac259853f7d14819dd75444b7f087b3636",
+        "rejection_reason": "Selected operation is not licensed by the physical definition"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_b0912467",
+          "requested_pair_matches": true,
+          "definition_kind": "internal_aligned",
+          "value": 0.003381750286711128,
+          "unit": "nm"
+        },
+        {
+          "evidence_id": "E_b0912467",
+          "requested_pair_matches": true,
+          "definition_kind": "internal_aligned",
+          "value": 0.003381750286711128,
+          "unit": "nm"
+        }
+      ]
+    }
+  ],
+  "failed_positive_bound_control": [
+    {
+      "case_id": "fs_341cb47d54ab86a7ced5b695",
+      "group_id": "41_6957_10",
+      "family": "missing_adsorbate_bound",
+      "presentation": "structured",
+      "target_metric": "adsorbate_frame_rmsd",
+      "claim": "For endpoint pair P_750f261c, the adsorbate RMSD in the specified surface frame, with equal atom weights and the supplied atom sets, is at most 1.891432422595985694570127825 angstrom.",
+      "expected": "SUPPORTED",
+      "valid_proofs": [
+        {
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E_6743df66"
+          ],
+          "operation": "adsorbate_upper"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_0e4e22c4\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\":[\"E_0e4e22c4\"],\"operation\":\"none\"}",
+      "direct_trace": {
+        "case_id": "fs_341cb47d54ab86a7ced5b695",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_0e4e22c4"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "6b39d1bc5fce5edcaf8d10a0ae5cdcd68abc4d603c39de632580d36cfca37af3",
+        "request_signature": "40bd6cf4c1df5e54799bb8a9768fb6201882be24f86fbb0a1bfcb4a9c5e2a7c8"
+      },
+      "run_only_trace": {
+        "case_id": "fs_341cb47d54ab86a7ced5b695",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "INVALID_FORMAT",
+        "verdict": null,
+        "evidence_ids": [],
+        "operation": "none",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": false,
+        "tool_action": "not_calculated",
+        "raw_output_sha256": "fb35ddc40f3722058a3e541dabaa3b7caccb4f1c37fa5d8adf4186de37a28c0b",
+        "request_signature": "ff6f351509e4fa81d6d9479ee3777a0b04addd5a6c9ba5d3d94a1ed2b3e9788e"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_341cb47d54ab86a7ced5b695",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "INVALID_FORMAT",
+        "verdict": null,
+        "evidence_ids": [],
+        "operation": "none",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": false,
+        "tool_action": "not_calculated",
+        "raw_output_sha256": "fb35ddc40f3722058a3e541dabaa3b7caccb4f1c37fa5d8adf4186de37a28c0b",
+        "request_signature": "ff6f351509e4fa81d6d9479ee3777a0b04addd5a6c9ba5d3d94a1ed2b3e9788e"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_0e4e22c4",
+          "requested_pair_matches": false,
+          "definition_kind": "adsorbate_frame",
+          "value": 0.7000000000000001,
+          "unit": "angstrom"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_f0131ede5cca0b4b9fe81469",
+      "group_id": "15_3994_47",
+      "family": "missing_adsorbate_bound",
+      "presentation": "report",
+      "target_metric": "adsorbate_frame_rmsd",
+      "claim": "For endpoint pair P_408cbc5b, the adsorbate RMSD in the specified surface frame, with equal atom weights and the supplied atom sets, is at most 3.197755062753291814779078022 angstrom.",
+      "expected": "SUPPORTED",
+      "valid_proofs": [
+        {
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E_a93f401d"
+          ],
+          "operation": "adsorbate_upper"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_a93f401d\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\": [\"E_a93f401d\"], \"operation\": \"adsorbate_upper\"}",
+      "direct_trace": {
+        "case_id": "fs_f0131ede5cca0b4b9fe81469",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_a93f401d"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "c4634fb112fa4c1aef7a8dc68921219b60ff4cbb12507a8a70940cd1fbf68873",
+        "request_signature": "e73f05f2bd50a9a43ff6b7ee7884d6b5921e1b5e0d10bd020ddd997bb48d6b1c"
+      },
+      "run_only_trace": {
+        "case_id": "fs_f0131ede5cca0b4b9fe81469",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_a93f401d"
+        ],
+        "operation": "adsorbate_upper",
+        "interval_A": [
+          "0",
+          "2.5582040502026334518232624176229784306688014818677"
+        ],
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "selected_interval_calculated",
+        "raw_output_sha256": "8158a6b8b255b3100cbe06a07ad229a28f7999282a3f02669b657b3f3fd0e4e2",
+        "request_signature": "5fcbc9e9710f868ce176a430c940bb24b96c685cfd20149ff822b36476600284"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_f0131ede5cca0b4b9fe81469",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_a93f401d"
+        ],
+        "operation": "adsorbate_upper",
+        "interval_A": [
+          "0",
+          "2.5582040502026334518232624176229784306688014818677"
+        ],
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "selected_interval_calculated",
+        "raw_output_sha256": "8158a6b8b255b3100cbe06a07ad229a28f7999282a3f02669b657b3f3fd0e4e2",
+        "request_signature": "5fcbc9e9710f868ce176a430c940bb24b96c685cfd20149ff822b36476600284"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_a93f401d",
+          "requested_pair_matches": true,
+          "definition_kind": "mobile_frame",
+          "value": 1.100875742515018,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_a93f401d",
+          "requested_pair_matches": true,
+          "definition_kind": "mobile_frame",
+          "value": 1.100875742515018,
+          "unit": "angstrom"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_98666505480a27f25f79bb18",
+      "group_id": "41_6229_3",
+      "family": "missing_mobile_bound",
+      "presentation": "structured",
+      "target_metric": "mobile_rmsd",
+      "claim": "For endpoint pair P_f9b804d9, the mobile-atom coordinate RMSD, with equal atom weights and the supplied atom sets, is at most 0.1579638160810193775139159652 angstrom.",
+      "expected": "CONTRADICTED",
+      "valid_proofs": [
+        {
+          "verdict": "CONTRADICTED",
+          "evidence_ids": [
+            "E_4c482a78"
+          ],
+          "operation": "mobile_lower"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"CONTRADICTED\",\n  \"evidence_ids\": [\"E_33cbc058\"],\n  \"operation\": \"mobile_lower\"\n}",
+      "raw_selector": "{\"evidence_ids\":[\"E_33cbc058\"],\"operation\":\"value\"}",
+      "direct_trace": {
+        "case_id": "fs_98666505480a27f25f79bb18",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "CONTRADICTED",
+        "evidence_ids": [
+          "E_33cbc058"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "c7f2ddab1724f0a844cd8c14f08c1d9530e35f223ecc1825d9abdf5054cf97fd",
+        "request_signature": "8eed8dc67f0452c895d115a53f89918cf51bbabb3d61a27bf2620affaeb83261"
+      },
+      "run_only_trace": {
+        "case_id": "fs_98666505480a27f25f79bb18",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_33cbc058"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "38985e0f1f631acbfd1636f1c57cd4e49b53af2982aa708bd59f5b891de2c52a",
+        "request_signature": "0a3a7db5192b31ea9f9dd6718328625185349a206a18c905d41d0e82232f3f4e",
+        "rejection_reason": "Selected record belongs to another endpoint pair"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_98666505480a27f25f79bb18",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_33cbc058"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "38985e0f1f631acbfd1636f1c57cd4e49b53af2982aa708bd59f5b891de2c52a",
+        "request_signature": "0a3a7db5192b31ea9f9dd6718328625185349a206a18c905d41d0e82232f3f4e",
+        "rejection_reason": "Selected record belongs to another endpoint pair"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_33cbc058",
+          "requested_pair_matches": false,
+          "definition_kind": "mobile_frame",
+          "value": 0.4248838850668184,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_33cbc058",
+          "requested_pair_matches": false,
+          "definition_kind": "mobile_frame",
+          "value": 0.4248838850668184,
+          "unit": "angstrom"
+        }
+      ]
+    }
+  ],
+  "unsupported_numeric_answer_on_ambiguous_packet": [
+    {
+      "case_id": "fs_91f5f89ae0ec0a865640735c",
+      "group_id": "20_3033_9",
+      "family": "missing_mobile_ambiguous",
+      "presentation": "structured",
+      "target_metric": "mobile_rmsd",
+      "claim": "For endpoint pair P_39de8dfd, the mobile-atom coordinate RMSD, with equal atom weights and the supplied atom sets, is at most 0.05157709793223419722716630496 angstrom.",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "valid_proofs": [],
+      "raw_direct": "{\n  \"verdict\": \"CONTRADICTED\",\n  \"evidence_ids\": [\"E_f3d87caa\"],\n  \"operation\": \"mobile_lower\"\n}",
+      "raw_selector": "{\"evidence_ids\":[\"E_f3d87caa\"],\"operation\":\"value\"}",
+      "direct_trace": {
+        "case_id": "fs_91f5f89ae0ec0a865640735c",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "CONTRADICTED",
+        "evidence_ids": [
+          "E_f3d87caa"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "73e3ffad6a44754288048704d3be9b543884328e2d30e22a7b191de2b271d9b7",
+        "request_signature": "d0ecce98f3bc7f64c7b01d8f261f98bd1ff8204a95871b6b774261e928b682f3"
+      },
+      "run_only_trace": {
+        "case_id": "fs_91f5f89ae0ec0a865640735c",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_f3d87caa"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "4a950c194cc2604bed2a0299690b1a8497281e41751a21c7e7aa45a0de775578",
+        "request_signature": "75fdaedd6094645233fe94a5602e24705829a3e2c13842fb1ce8592d25806932",
+        "rejection_reason": "Selected record belongs to another endpoint pair"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_91f5f89ae0ec0a865640735c",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_f3d87caa"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "4a950c194cc2604bed2a0299690b1a8497281e41751a21c7e7aa45a0de775578",
+        "request_signature": "75fdaedd6094645233fe94a5602e24705829a3e2c13842fb1ce8592d25806932",
+        "rejection_reason": "Selected record belongs to another endpoint pair"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_f3d87caa",
+          "requested_pair_matches": false,
+          "definition_kind": "mobile_frame",
+          "value": 0.4041451884327382,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_f3d87caa",
+          "requested_pair_matches": false,
+          "definition_kind": "mobile_frame",
+          "value": 0.4041451884327382,
+          "unit": "angstrom"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_aafa536e885cc47938d5e557",
+      "group_id": "12_3701_25",
+      "family": "missing_adsorbate_ambiguous",
+      "presentation": "report",
+      "target_metric": "adsorbate_frame_rmsd",
+      "claim": "For endpoint pair P_f0517e5e, the adsorbate RMSD in the specified surface frame, with equal atom weights and the supplied atom sets, is at most 3.123490838606873191454231152 angstrom.",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "valid_proofs": [],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_92c7ca4f\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\":[\"E_92c7ca4f\"],\"operation\":\"adsorbate_upper\"}",
+      "direct_trace": {
+        "case_id": "fs_aafa536e885cc47938d5e557",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_92c7ca4f"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "5115590f7e366e2da90c69616ad0c1adcb617bd3333598c86832aa98e8858dff",
+        "request_signature": "f0803cad7f6904c48aea358ed19d6aa2ced2a1f5a88d88a75ff14c287db4af46"
+      },
+      "run_only_trace": {
+        "case_id": "fs_aafa536e885cc47938d5e557",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_92c7ca4f"
+        ],
+        "operation": "adsorbate_upper",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "94ea1b5fbc98b38115e8745bb73ad8a283d801b0a0a61e7bd4394c79ded850ed",
+        "request_signature": "d9b0d2c45665bcd1df3a79e1d3ae4a6386c1b32e44a7a231efa70b9df4aa97b8",
+        "rejection_reason": "Selected record belongs to another endpoint pair"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_aafa536e885cc47938d5e557",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_92c7ca4f"
+        ],
+        "operation": "adsorbate_upper",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "94ea1b5fbc98b38115e8745bb73ad8a283d801b0a0a61e7bd4394c79ded850ed",
+        "request_signature": "d9b0d2c45665bcd1df3a79e1d3ae4a6386c1b32e44a7a231efa70b9df4aa97b8",
+        "rejection_reason": "Selected record belongs to another endpoint pair"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_92c7ca4f",
+          "requested_pair_matches": false,
+          "definition_kind": "mobile_frame",
+          "value": 0.2745625891934576,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_92c7ca4f",
+          "requested_pair_matches": false,
+          "definition_kind": "mobile_frame",
+          "value": 0.2745625891934576,
+          "unit": "angstrom"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_9e29c9be832d4a17509cdc54",
+      "group_id": "58_4098_202",
+      "family": "missing_mobile_ambiguous",
+      "presentation": "report",
+      "target_metric": "mobile_rmsd",
+      "claim": "For endpoint pair P_cee31027, the mobile-atom coordinate RMSD, with equal atom weights and the supplied atom sets, is at least 1.608535643209182833234358538 angstrom.",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "valid_proofs": [],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_1fd7664e\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\": [\"E_1fd7664e\"], \"operation\": \"mobile_lower\"}",
+      "direct_trace": {
+        "case_id": "fs_9e29c9be832d4a17509cdc54",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_1fd7664e"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "d9baf7a077ac66a6567cc6a3a213fd09839846d512d3c20c9e364a8fc0d18314",
+        "request_signature": "842fb7d55011997f7c683c881b80da401d53eb8a067d51d79b1103fded44f9c5"
+      },
+      "run_only_trace": {
+        "case_id": "fs_9e29c9be832d4a17509cdc54",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_UNRESOLVED",
+        "verdict": null,
+        "evidence_ids": [
+          "E_1fd7664e"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": [
+          "1.2868285145673462665874868305885784577577560903236",
+          null
+        ],
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_bound_does_not_settle_claim",
+        "raw_output_sha256": "82d008505d0ac2754e6fe15e31224c6b23a74c8185bb3a2610aedee57fcd3e4c",
+        "request_signature": "1d8612e27d8669e402445ab527aa0842d76f56a8d6f302d3c2489a918ca28939"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_9e29c9be832d4a17509cdc54",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_UNRESOLVED",
+        "verdict": null,
+        "evidence_ids": [
+          "E_1fd7664e"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": [
+          "1.2868285145673462665874868305885784577577560903236",
+          null
+        ],
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_bound_does_not_settle_claim",
+        "raw_output_sha256": "82d008505d0ac2754e6fe15e31224c6b23a74c8185bb3a2610aedee57fcd3e4c",
+        "request_signature": "1d8612e27d8669e402445ab527aa0842d76f56a8d6f302d3c2489a918ca28939"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_1fd7664e",
+          "requested_pair_matches": true,
+          "definition_kind": "adsorbate_frame",
+          "value": 1.819850337749565,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_1fd7664e",
+          "requested_pair_matches": true,
+          "definition_kind": "adsorbate_frame",
+          "value": 1.819850337749565,
+          "unit": "angstrom"
+        }
+      ]
+    }
+  ],
+  "same_pair_unlicensed_operation_rejected": [
+    {
+      "case_id": "fs_90b10f73ef813803264f5829",
+      "group_id": "41_836_33",
+      "family": "unit_conversion",
+      "presentation": "structured",
+      "target_metric": "internal_rmsd",
+      "claim": "For endpoint pair P_f396ffcd, the rigid-aligned internal adsorbate RMSD, with equal atom weights and the supplied atom sets, is at least 0.030439152306441795 angstrom.",
+      "expected": "CONTRADICTED",
+      "valid_proofs": [
+        {
+          "verdict": "CONTRADICTED",
+          "evidence_ids": [
+            "E_9c272579"
+          ],
+          "operation": "value"
+        }
+      ],
+      "raw_direct": "{\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"E_bb7f8141\"],\"operation\":\"adsorbate_upper\"}",
+      "raw_selector": "{\"evidence_ids\":[\"E_bb7f8141\"],\"operation\":\"mobile_lower\"}",
+      "direct_trace": {
+        "case_id": "fs_90b10f73ef813803264f5829",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_bb7f8141"
+        ],
+        "operation": "adsorbate_upper",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "1cab3af7d1f74d71fab40f9d56207048bbe6085bf70e6e13de54d52f2a2d28d0",
+        "request_signature": "29bfb3d02ffacdae8b9fe45d80137b2d0e190aea4bb1392a065a1a680e55c030"
+      },
+      "run_only_trace": {
+        "case_id": "fs_90b10f73ef813803264f5829",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_bb7f8141"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": [
+          "0.76378498634955346556907812231463571148800636263713",
+          null
+        ],
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "selected_interval_calculated",
+        "raw_output_sha256": "a3605572034fc077205ab67530099d63d80afa4cba008495829bf44baaf68346",
+        "request_signature": "e7acbd2d482894ed2b7497a146700b81377162db325fb6f510abf4e729f75b9c"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_90b10f73ef813803264f5829",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_bb7f8141"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "a3605572034fc077205ab67530099d63d80afa4cba008495829bf44baaf68346",
+        "request_signature": "e7acbd2d482894ed2b7497a146700b81377162db325fb6f510abf4e729f75b9c",
+        "rejection_reason": "Selected operation is not licensed by the physical definition"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_bb7f8141",
+          "requested_pair_matches": true,
+          "definition_kind": "adsorbate_frame",
+          "value": 0.1322914402415728,
+          "unit": "nm"
+        },
+        {
+          "evidence_id": "E_bb7f8141",
+          "requested_pair_matches": true,
+          "definition_kind": "adsorbate_frame",
+          "value": 0.1322914402415728,
+          "unit": "nm"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_5e7eba82b910fcc99c10de81",
+      "group_id": "58_1109_14",
+      "family": "direct_scope",
+      "presentation": "report",
+      "target_metric": "internal_rmsd",
+      "claim": "For endpoint pair P_ac798c3a, the rigid-aligned internal adsorbate RMSD, with equal atom weights and the supplied atom sets, is at least 0.35279426208073785 angstrom.",
+      "expected": "SUPPORTED",
+      "valid_proofs": [
+        {
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E_15bd85a8"
+          ],
+          "operation": "value"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_9eb81a4a\"],\n  \"operation\": \"mobile_lower\"\n}",
+      "raw_selector": "{\"evidence_ids\": [\"E_9eb81a4a\"], \"operation\": \"mobile_lower\"}",
+      "direct_trace": {
+        "case_id": "fs_5e7eba82b910fcc99c10de81",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_9eb81a4a"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "01ea39baa3661d69b6dbcea0f0833ed115267df6f73c287a80db796d0f79534e",
+        "request_signature": "1ae50c907eb762e2141161065593ec274670fbdc683732be0f1148534f3a4de6"
+      },
+      "run_only_trace": {
+        "case_id": "fs_5e7eba82b910fcc99c10de81",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_9eb81a4a"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": [
+          "0.38654955650722654262181483461824265936800103709400",
+          null
+        ],
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "selected_interval_calculated",
+        "raw_output_sha256": "f63cac452ede359c6b4731e0c3a5175b0b1733d8c07ed5c0bebc19ba3ae1cdc5",
+        "request_signature": "65e093858652c8291d78477cffeb90a94f34444dc18639a81a997a1bfe7ea079"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_5e7eba82b910fcc99c10de81",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_9eb81a4a"
+        ],
+        "operation": "mobile_lower",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "f63cac452ede359c6b4731e0c3a5175b0b1733d8c07ed5c0bebc19ba3ae1cdc5",
+        "request_signature": "65e093858652c8291d78477cffeb90a94f34444dc18639a81a997a1bfe7ea079",
+        "rejection_reason": "Selected operation is not licensed by the physical definition"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_9eb81a4a",
+          "requested_pair_matches": true,
+          "definition_kind": "mobile_frame",
+          "value": 0.6695234715137331,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_9eb81a4a",
+          "requested_pair_matches": true,
+          "definition_kind": "mobile_frame",
+          "value": 0.6695234715137331,
+          "unit": "angstrom"
+        }
+      ]
+    },
+    {
+      "case_id": "fs_d2c739a45e9f95b9e9de411a",
+      "group_id": "41_6172_45",
+      "family": "missing_mobile_bound",
+      "presentation": "report",
+      "target_metric": "mobile_rmsd",
+      "claim": "For endpoint pair P_4bb24859, the mobile-atom coordinate RMSD, with equal atom weights and the supplied atom sets, is at least 0.5711828543544404774272615267 angstrom.",
+      "expected": "SUPPORTED",
+      "valid_proofs": [
+        {
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E_4ed6afe1"
+          ],
+          "operation": "mobile_lower"
+        }
+      ],
+      "raw_direct": "{\n  \"verdict\": \"SUPPORTED\",\n  \"evidence_ids\": [\"E_4ed6afe1\"],\n  \"operation\": \"value\"\n}",
+      "raw_selector": "{\"evidence_ids\":[\"E_4ed6afe1\"],\"operation\":\"value\"}",
+      "direct_trace": {
+        "case_id": "fs_d2c739a45e9f95b9e9de411a",
+        "method": "direct",
+        "source_condition": "direct",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_4ed6afe1"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "model_answer",
+        "raw_output_sha256": "330f13ebe73a8ba6efb6ebe80334481b7ff4b970ad37f3d4832270a66a5d463e",
+        "request_signature": "271c26ea4235ab06d15935e80bafb38d23c885458f09201856cd1fbc9cb95130"
+      },
+      "run_only_trace": {
+        "case_id": "fs_d2c739a45e9f95b9e9de411a",
+        "method": "run_only",
+        "source_condition": "select_evidence",
+        "disposition": "ACCEPT_NUMERIC",
+        "verdict": "SUPPORTED",
+        "evidence_ids": [
+          "E_4ed6afe1"
+        ],
+        "operation": "value",
+        "interval_A": [
+          "1.3804757975717339",
+          "1.3804757975717339"
+        ],
+        "accepted_numeric": true,
+        "format_valid": true,
+        "tool_action": "selected_interval_calculated",
+        "raw_output_sha256": "00ec7c6ec3a7885b59fee183605907aefae5eeaad9a0f07e034cbdc4592661f3",
+        "request_signature": "fc77e1dd328efd8026112c77976305e1b25b8fbf9f8a80265ba325235fdfcaa5"
+      },
+      "full_definition_trace": {
+        "case_id": "fs_d2c739a45e9f95b9e9de411a",
+        "method": "full_definition",
+        "source_condition": "select_evidence",
+        "disposition": "REJECT_CONTRACT",
+        "verdict": null,
+        "evidence_ids": [
+          "E_4ed6afe1"
+        ],
+        "operation": "value",
+        "interval_A": null,
+        "accepted_numeric": false,
+        "format_valid": true,
+        "tool_action": "selected_record_rejected",
+        "raw_output_sha256": "00ec7c6ec3a7885b59fee183605907aefae5eeaad9a0f07e034cbdc4592661f3",
+        "request_signature": "fc77e1dd328efd8026112c77976305e1b25b8fbf9f8a80265ba325235fdfcaa5",
+        "rejection_reason": "Selected operation is not licensed by the physical definition"
+      },
+      "selected_row_context": [
+        {
+          "evidence_id": "E_4ed6afe1",
+          "requested_pair_matches": true,
+          "definition_kind": "adsorbate_frame",
+          "value": 1.3804757975717339,
+          "unit": "angstrom"
+        },
+        {
+          "evidence_id": "E_4ed6afe1",
+          "requested_pair_matches": true,
+          "definition_kind": "adsorbate_frame",
+          "value": 1.3804757975717339,
+          "unit": "angstrom"
+        }
+      ]
+    }
+  ]
+}

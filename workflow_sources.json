@@ -1,0 +1,47 @@
+{
+  "note": "Unchanged source extracted from the reviewed delivery ZIPs; historical workflow inputs and checksums remain authoritative.",
+  "archives": [
+    {
+      "archive": "geom_scope_phase1_continue.zip",
+      "browsable_files": 21,
+      "top_folder": [
+        "phase1_continue"
+      ]
+    },
+    {
+      "archive": "geom_scope_phase1_uma.zip",
+      "browsable_files": 22,
+      "top_folder": [
+        "geom_scope_phase1_uma"
+      ]
+    },
+    {
+      "archive": "geom_scope_phase2_pilot.zip",
+      "browsable_files": 20,
+      "top_folder": [
+        "phase2_pilot"
+      ]
+    },
+    {
+      "archive": "geom_scope_phase2_refine.zip",
+      "browsable_files": 23,
+      "top_folder": [
+        "phase2_refine"
+      ]
+    },
+    {
+      "archive": "geom_scope_phase3_final.zip",
+      "browsable_files": 24,
+      "top_folder": [
+        "phase3_final"
+      ]
+    },
+    {
+      "archive": "geom_scope_phase3_prepare.zip",
+      "browsable_files": 23,
+      "top_folder": [
+        "phase3_prepare"
+      ]
+    }
+  ]
+}

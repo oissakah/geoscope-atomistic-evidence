@@ -1,0 +1,16 @@
+{
+  "seed": 20261019,
+  "n_systems": 20,
+  "max_atoms": 180,
+  "min_adsorbate_atoms": 3,
+  "optimizer": "FIRE",
+  "fmax": 0.05,
+  "max_steps": 300,
+  "model_name": "uma-s-1p2p1",
+  "task_name": "oc20",
+  "smoke_systems": 3,
+  "smoke_only": false,
+  "thresholds_A": [0.1, 0.5],
+  "threshold_margin_A": 0.005,
+  "anchor_max_displacement_A": 0.02
+}

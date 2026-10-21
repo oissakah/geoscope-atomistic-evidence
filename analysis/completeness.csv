@@ -1,0 +1,7 @@
+model_key,condition,expected_cases,raw_contract_valid,INVALID_FORMAT,missing_cases,duplicate_cases,truncated_cases,execution_error_cases,invalid_format_cases,valid_contract_cases,all_expected_unique_records,all_contract_valid,INVALID_TRUNCATED
+qwen,direct,1760,1757,3,0,0,0,0,3,1757,True,False,
+qwen,select_evidence,1760,1670,90,0,0,0,0,90,1670,True,False,
+phi,direct,1760,1682,78,0,0,0,0,78,1682,True,False,
+phi,select_evidence,1760,1638,122,0,0,0,0,122,1638,True,False,
+smol,direct,1760,1106,396,0,0,258,0,396,1106,True,False,258
+smol,select_evidence,1760,1447,310,0,0,3,0,310,1447,True,False,3

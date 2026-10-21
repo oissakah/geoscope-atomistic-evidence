@@ -1,0 +1,11 @@
+{
+  "n_systems": 60,
+  "seed": 20261021,
+  "max_atoms": 180,
+  "min_adsorbate_atoms": 3,
+  "max_steps": 600,
+  "batch_size": 20,
+  "n_batches": 3,
+  "fmax": 0.05,
+  "anchor_max_displacement_A": 0.02
+}

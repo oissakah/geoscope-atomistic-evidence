@@ -1,0 +1,37 @@
+{
+  "source_sha256": "20e6b415c0ab6b3d239138664301d5da1567c052d6770afa63e4c023a89c8b26",
+  "denominator": 1760,
+  "source_groups": 55,
+  "rows": [
+    {
+      "method": "arithmetic_only",
+      "cases": 1760,
+      "valid_numeric": 312,
+      "wrong_verdict": 255,
+      "correct_verdict_unlicensed": 110,
+      "no_accepted_proof": 1083
+    },
+    {
+      "method": "run_only",
+      "cases": 1760,
+      "valid_numeric": 312,
+      "wrong_verdict": 42,
+      "correct_verdict_unlicensed": 39,
+      "no_accepted_proof": 1367
+    },
+    {
+      "method": "full_definition",
+      "cases": 1760,
+      "valid_numeric": 312,
+      "wrong_verdict": 0,
+      "correct_verdict_unlicensed": 0,
+      "no_accepted_proof": 1448
+    }
+  ],
+  "blocked_after_run_check": 81,
+  "wrong_verdict_blocked": 42,
+  "unlicensed_proof_blocked": 39,
+  "answerable_acceptances_lost": 60,
+  "valid_answers_lost": 0,
+  "caption": "Figure 1. Qwen acceptance from identical evidence-selection outputs across 1,760 correlated cases from 55 source groups. Full definition checking blocks 81 bad acceptances remaining after endpoint-pair checking: 42 wrong verdicts and 39 correct verdicts supported by unlicensed proofs. The 312 valid numerical answers are unchanged. Of the 81 blocked acceptances, 60 occur on answerable cases, reducing answerable coverage by 5.45 percentage points; none of the lost answers had a valid proof. The complement contains rejections and invalid or missing responses, and receives no scientific-insufficiency credit. Zero bad acceptance under full checking is enforced by the controlled definitions and deterministic arithmetic."
+}

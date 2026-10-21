@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/oissakah/geoscope-atomistic-evidence",
+  "original_repository_visibility": "private",
+  "repository_visibility_changed": false,
+  "original_evidence_sha256": "20e6b415c0ab6b3d239138664301d5da1567c052d6770afa63e4c023a89c8b26",
+  "cpu_tests_passed": 57,
+  "standard_library_only_tests": true,
+  "frozen_scoring_exactly_reproduced": true,
+  "browsable_workflow_files": 133,
+  "unchanged_runner_archives": 6,
+  "new_scientific_inference_performed": false,
+  "new_license_assigned": false,
+  "model_weights_or_credentials_included": false,
+  "note": "Repository presentation and CI added around immutable reviewed research artifacts; no final protocol or result changed."
+}

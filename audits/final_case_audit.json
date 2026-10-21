@@ -1,0 +1,1265 @@
+{
+  "archive_sha256": "20e6b415c0ab6b3d239138664301d5da1567c052d6770afa63e4c023a89c8b26",
+  "verified_members": 69,
+  "cases": 1760,
+  "source_groups": 55,
+  "dev_groups": 20,
+  "heldout_dev_disjoint": true,
+  "exact_trusted_rebuild": true,
+  "source_pairs_equal_qualified_pool": true,
+  "no_case_skips_or_replacements": true,
+  "proof_count_histogram": {
+    "1": 918,
+    "0": 660,
+    "2": 182
+  },
+  "proof_operations": {
+    "adsorbate_upper": 310,
+    "value": 660,
+    "mobile_lower": 312
+  },
+  "min_remaining_mobile_atoms": 8,
+  "all_model_payloads_free_of_audit_gold_and_source_identity": true,
+  "model_counts": {
+    "qwen": {
+      "counts": {
+        "retained_numeric_answers": 312,
+        "extra_rejections_full_vs_run": 81,
+        "extra_rejections_answerable": 60,
+        "extra_rejections_insufficient": 21,
+        "raw_requests": 3520,
+        "truncated": 0,
+        "status_ok": 3520
+      },
+      "full_extra_rejections_by_selected_definition": {
+        "unit_conversion/adsorbate_frame/mobile_lower": 6,
+        "direct_scope/mobile_frame/mobile_lower": 17,
+        "missing_mobile_bound/adsorbate_frame/value": 10,
+        "missing_internal_anchor_only/anchor/value": 2,
+        "direct_scope/adsorbate_frame/mobile_lower": 16,
+        "unit_conversion/mobile_frame/mobile_lower": 3,
+        "direct_scope/internal_aligned/adsorbate_upper": 4,
+        "missing_internal_anchor_only/anchor/adsorbate_upper": 9,
+        "missing_mobile_ambiguous/adsorbate_frame/value": 7,
+        "direct_scope/internal_aligned/value": 1,
+        "missing_adsorbate_ambiguous/mobile_frame/value": 3,
+        "missing_adsorbate_bound/mobile_frame/value": 1,
+        "unit_conversion/adsorbate_frame/adsorbate_upper": 1,
+        "unit_conversion/internal_aligned/mobile_lower": 1
+      },
+      "breakdowns": {
+        "direct": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 877,
+              "correct_with_proof": 148,
+              "scientific_label_correct": 318,
+              "scientific_threeway_correct": 148,
+              "rejected": 0,
+              "invalid": 3
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 826,
+              "correct_with_proof": 107,
+              "scientific_label_correct": 365,
+              "scientific_threeway_correct": 158,
+              "rejected": 0,
+              "invalid": 2
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 217,
+              "correct_with_proof": 20,
+              "scientific_label_correct": 130,
+              "scientific_threeway_correct": 20,
+              "rejected": 0,
+              "invalid": 2
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 218,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 2,
+              "scientific_threeway_correct": 2,
+              "rejected": 0,
+              "invalid": 0
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 217,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 3,
+              "scientific_threeway_correct": 3,
+              "rejected": 0,
+              "invalid": 0
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 439,
+              "correct_with_proof": 155,
+              "scientific_label_correct": 273,
+              "scientific_threeway_correct": 155,
+              "rejected": 0,
+              "invalid": 1
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 220,
+              "correct_with_proof": 64,
+              "scientific_label_correct": 107,
+              "scientific_threeway_correct": 64,
+              "rejected": 0,
+              "invalid": 0
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 220,
+              "correct_with_proof": 16,
+              "scientific_label_correct": 122,
+              "scientific_threeway_correct": 16,
+              "rejected": 0,
+              "invalid": 0
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 95,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 13,
+              "scientific_threeway_correct": 13,
+              "rejected": 0,
+              "invalid": 2
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 77,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 33,
+              "scientific_threeway_correct": 33,
+              "rejected": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "arithmetic_only": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 433,
+              "correct_with_proof": 182,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 385,
+              "invalid": 62
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 244,
+              "correct_with_proof": 130,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 608,
+              "invalid": 28
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 107,
+              "correct_with_proof": 60,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 83,
+              "invalid": 30
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 52,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 166,
+              "invalid": 2
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 40,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 161,
+              "invalid": 19
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 164,
+              "correct_with_proof": 118,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 266,
+              "invalid": 10
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 73,
+              "correct_with_proof": 58,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 140,
+              "invalid": 7
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 134,
+              "correct_with_proof": 76,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 82,
+              "invalid": 4
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 55,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 38,
+              "invalid": 17
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 52,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 57,
+              "invalid": 1
+            }
+          }
+        },
+        "run_only": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 192,
+              "correct_with_proof": 182,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 626,
+              "invalid": 62
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 201,
+              "correct_with_proof": 130,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 651,
+              "invalid": 28
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 61,
+              "correct_with_proof": 60,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 129,
+              "invalid": 30
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 7,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 211,
+              "invalid": 2
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 3,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 198,
+              "invalid": 19
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 156,
+              "correct_with_proof": 118,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 274,
+              "invalid": 10
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 69,
+              "correct_with_proof": 58,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 144,
+              "invalid": 7
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 86,
+              "correct_with_proof": 76,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 130,
+              "invalid": 4
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 11,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 82,
+              "invalid": 17
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 109,
+              "invalid": 1
+            }
+          }
+        },
+        "full_definition": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 182,
+              "correct_with_proof": 182,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 636,
+              "invalid": 62
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 130,
+              "correct_with_proof": 130,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 722,
+              "invalid": 28
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 60,
+              "correct_with_proof": 60,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 130,
+              "invalid": 30
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 218,
+              "invalid": 2
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 201,
+              "invalid": 19
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 118,
+              "correct_with_proof": 118,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 312,
+              "invalid": 10
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 58,
+              "correct_with_proof": 58,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 155,
+              "invalid": 7
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 76,
+              "correct_with_proof": 76,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 140,
+              "invalid": 4
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 93,
+              "invalid": 17
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 109,
+              "invalid": 1
+            }
+          }
+        }
+      }
+    },
+    "phi": {
+      "counts": {
+        "extra_rejections_full_vs_run": 245,
+        "extra_rejections_insufficient": 61,
+        "extra_rejections_answerable": 184,
+        "retained_numeric_answers": 121,
+        "raw_requests": 3520,
+        "truncated": 0,
+        "status_ok": 3520
+      },
+      "full_extra_rejections_by_selected_definition": {
+        "missing_adsorbate_ambiguous/mobile_frame/value": 21,
+        "missing_adsorbate_bound/mobile_frame/value": 22,
+        "unit_conversion/internal_aligned/value": 16,
+        "missing_mobile_ambiguous/adsorbate_frame/value": 33,
+        "direct_scope/mobile_frame/value": 26,
+        "direct_scope/internal_aligned/value": 40,
+        "missing_mobile_bound/adsorbate_frame/value": 39,
+        "unit_conversion/mobile_frame/value": 9,
+        "direct_scope/adsorbate_frame/value": 16,
+        "unit_conversion/adsorbate_frame/value": 12,
+        "direct_scope/adsorbate_frame/mobile_lower": 2,
+        "missing_internal_anchor_only/anchor/value": 7,
+        "unit_conversion/adsorbate_frame/mobile_lower": 1,
+        "unit_conversion/mobile_frame/mobile_lower": 1
+      },
+      "breakdowns": {
+        "direct": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 84,
+              "correct_with_proof": 8,
+              "scientific_label_correct": 325,
+              "scientific_threeway_correct": 305,
+              "rejected": 0,
+              "invalid": 12
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 522,
+              "correct_with_proof": 18,
+              "scientific_label_correct": 248,
+              "scientific_threeway_correct": 100,
+              "rejected": 0,
+              "invalid": 67
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 74,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 38,
+              "scientific_threeway_correct": 0,
+              "rejected": 0,
+              "invalid": 23
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 98,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 107,
+              "scientific_threeway_correct": 107,
+              "rejected": 0,
+              "invalid": 15
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 78,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 130,
+              "scientific_threeway_correct": 130,
+              "rejected": 0,
+              "invalid": 12
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 126,
+              "correct_with_proof": 20,
+              "scientific_label_correct": 78,
+              "scientific_threeway_correct": 20,
+              "rejected": 0,
+              "invalid": 7
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 56,
+              "correct_with_proof": 5,
+              "scientific_label_correct": 30,
+              "scientific_threeway_correct": 5,
+              "rejected": 0,
+              "invalid": 3
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 100,
+              "correct_with_proof": 1,
+              "scientific_label_correct": 48,
+              "scientific_threeway_correct": 1,
+              "rejected": 0,
+              "invalid": 15
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 35,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 74,
+              "scientific_threeway_correct": 74,
+              "rejected": 0,
+              "invalid": 1
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 39,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 68,
+              "scientific_threeway_correct": 68,
+              "rejected": 0,
+              "invalid": 3
+            }
+          }
+        },
+        "arithmetic_only": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 156,
+              "correct_with_proof": 60,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 659,
+              "invalid": 65
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 612,
+              "correct_with_proof": 61,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 207,
+              "invalid": 61
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 87,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 108,
+              "invalid": 25
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 70,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 140,
+              "invalid": 10
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 78,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 118,
+              "invalid": 24
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 209,
+              "correct_with_proof": 59,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 195,
+              "invalid": 36
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 89,
+              "correct_with_proof": 27,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 113,
+              "invalid": 18
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 109,
+              "correct_with_proof": 35,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 104,
+              "invalid": 7
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 75,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 34,
+              "invalid": 1
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 51,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 54,
+              "invalid": 5
+            }
+          }
+        },
+        "run_only": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 63,
+              "correct_with_proof": 60,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 752,
+              "invalid": 65
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 303,
+              "correct_with_proof": 61,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 516,
+              "invalid": 61
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 22,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 173,
+              "invalid": 25
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 33,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 177,
+              "invalid": 10
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 21,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 175,
+              "invalid": 24
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 143,
+              "correct_with_proof": 59,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 261,
+              "invalid": 36
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 66,
+              "correct_with_proof": 27,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 136,
+              "invalid": 18
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 74,
+              "correct_with_proof": 35,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 139,
+              "invalid": 7
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 7,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 102,
+              "invalid": 1
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 105,
+              "invalid": 5
+            }
+          }
+        },
+        "full_definition": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 60,
+              "correct_with_proof": 60,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 755,
+              "invalid": 65
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 61,
+              "correct_with_proof": 61,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 758,
+              "invalid": 61
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 195,
+              "invalid": 25
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 210,
+              "invalid": 10
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 196,
+              "invalid": 24
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 59,
+              "correct_with_proof": 59,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 345,
+              "invalid": 36
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 27,
+              "correct_with_proof": 27,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 175,
+              "invalid": 18
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 35,
+              "correct_with_proof": 35,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 178,
+              "invalid": 7
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 109,
+              "invalid": 1
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 105,
+              "invalid": 5
+            }
+          }
+        }
+      }
+    },
+    "smol": {
+      "counts": {
+        "extra_rejections_full_vs_run": 273,
+        "extra_rejections_insufficient": 96,
+        "retained_numeric_answers": 168,
+        "extra_rejections_answerable": 177,
+        "raw_requests": 3520,
+        "truncated": 261,
+        "status_ok": 3259
+      },
+      "full_extra_rejections_by_selected_definition": {
+        "missing_adsorbate_ambiguous/mobile_frame/value": 29,
+        "missing_mobile_ambiguous/adsorbate_frame/value": 48,
+        "unit_conversion/internal_aligned/value": 26,
+        "unit_conversion/adsorbate_frame/value": 6,
+        "direct_scope/internal_aligned/value": 49,
+        "direct_scope/mobile_frame/value": 18,
+        "missing_adsorbate_bound/mobile_frame/value": 19,
+        "missing_internal_anchor_only/anchor/value": 18,
+        "unit_conversion/mobile_frame/value": 5,
+        "direct_scope/adsorbate_frame/value": 14,
+        "missing_mobile_bound/adsorbate_frame/value": 39,
+        "missing_internal_anchor_only/anchor/adsorbate_upper": 1,
+        "direct_scope/internal_aligned/adsorbate_upper": 1
+      },
+      "breakdowns": {
+        "direct": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 368,
+              "correct_with_proof": 29,
+              "scientific_label_correct": 123,
+              "scientific_threeway_correct": 29,
+              "rejected": 0,
+              "invalid": 512
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 734,
+              "correct_with_proof": 37,
+              "scientific_label_correct": 237,
+              "scientific_threeway_correct": 37,
+              "rejected": 0,
+              "invalid": 146
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 141,
+              "correct_with_proof": 1,
+              "scientific_label_correct": 79,
+              "scientific_threeway_correct": 1,
+              "rejected": 0,
+              "invalid": 79
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 104,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 0,
+              "invalid": 116
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 135,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 0,
+              "invalid": 85
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 320,
+              "correct_with_proof": 36,
+              "scientific_label_correct": 156,
+              "scientific_threeway_correct": 36,
+              "rejected": 0,
+              "invalid": 120
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 164,
+              "correct_with_proof": 29,
+              "scientific_label_correct": 84,
+              "scientific_threeway_correct": 29,
+              "rejected": 0,
+              "invalid": 56
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 97,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 41,
+              "scientific_threeway_correct": 0,
+              "rejected": 0,
+              "invalid": 123
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 77,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 0,
+              "invalid": 33
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 64,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 0,
+              "invalid": 46
+            }
+          }
+        },
+        "arithmetic_only": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 607,
+              "correct_with_proof": 107,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 211,
+              "invalid": 62
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 566,
+              "correct_with_proof": 61,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 47,
+              "invalid": 267
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 144,
+              "correct_with_proof": 11,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 19,
+              "invalid": 57
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 159,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 19,
+              "invalid": 42
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 125,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 55,
+              "invalid": 40
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 280,
+              "correct_with_proof": 102,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 81,
+              "invalid": 79
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 149,
+              "correct_with_proof": 55,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 27,
+              "invalid": 44
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 147,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 39,
+              "invalid": 34
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 87,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 2,
+              "invalid": 21
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 82,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 16,
+              "invalid": 12
+            }
+          }
+        },
+        "run_only": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 142,
+              "correct_with_proof": 107,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 676,
+              "invalid": 62
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 299,
+              "correct_with_proof": 61,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 314,
+              "invalid": 267
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 30,
+              "correct_with_proof": 11,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 133,
+              "invalid": 57
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 48,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 130,
+              "invalid": 42
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 29,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 151,
+              "invalid": 40
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 184,
+              "correct_with_proof": 102,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 177,
+              "invalid": 79
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 92,
+              "correct_with_proof": 55,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 84,
+              "invalid": 44
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 39,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 147,
+              "invalid": 34
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 19,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 70,
+              "invalid": 21
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 98,
+              "invalid": 12
+            }
+          }
+        },
+        "full_definition": {
+          "presentation": {
+            "structured": {
+              "cases": 880,
+              "accepted": 107,
+              "correct_with_proof": 107,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 711,
+              "invalid": 62
+            },
+            "report": {
+              "cases": 880,
+              "accepted": 61,
+              "correct_with_proof": 61,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 552,
+              "invalid": 267
+            }
+          },
+          "family": {
+            "missing_adsorbate_bound": {
+              "cases": 220,
+              "accepted": 11,
+              "correct_with_proof": 11,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 152,
+              "invalid": 57
+            },
+            "missing_mobile_ambiguous": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 178,
+              "invalid": 42
+            },
+            "missing_adsorbate_ambiguous": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 180,
+              "invalid": 40
+            },
+            "direct_scope": {
+              "cases": 440,
+              "accepted": 102,
+              "correct_with_proof": 102,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 259,
+              "invalid": 79
+            },
+            "unit_conversion": {
+              "cases": 220,
+              "accepted": 55,
+              "correct_with_proof": 55,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 121,
+              "invalid": 44
+            },
+            "missing_mobile_bound": {
+              "cases": 220,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 186,
+              "invalid": 34
+            },
+            "missing_internal_anchor_only": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 89,
+              "invalid": 21
+            },
+            "wrong_pair": {
+              "cases": 110,
+              "accepted": 0,
+              "correct_with_proof": 0,
+              "scientific_label_correct": 0,
+              "scientific_threeway_correct": 0,
+              "rejected": 98,
+              "invalid": 12
+            }
+          }
+        }
+      }
+    }
+  },
+  "every_derived_trace_matched": true,
+  "all_full_definition_acceptances_match_licensed_gold_proofs": true
+}
