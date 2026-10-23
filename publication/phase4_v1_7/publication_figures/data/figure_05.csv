@@ -1,0 +1,5 @@
+model,total_answerable,strict,fence_normalized,operation_repaired,source
+Qwen3-4B,960,245,245,593,GeoScope_Phase4_v1_6_FOURMODEL_EXTERNAL_ANALYSIS.zip/per_case_comparison.csv
+Phi-4-mini,960,82,97,284,GeoScope_Phase4_v1_6_FOURMODEL_EXTERNAL_ANALYSIS.zip/per_case_comparison.csv
+SmolLM3-3B,960,1,143,260,GeoScope_Phase4_v1_6_FOURMODEL_EXTERNAL_ANALYSIS.zip/per_case_comparison.csv
+Qwen3-32B-AWQ,960,0,567,723,GeoScope_Phase4_v1_6_FOURMODEL_EXTERNAL_ANALYSIS.zip/per_case_comparison.csv

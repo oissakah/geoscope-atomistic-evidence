@@ -1,0 +1,9 @@
+model,presentation,correct,n_answerable,source
+Qwen3-4B,structured,148,480,OC20 frozen normalized per-case performance
+Qwen3-4B,report,97,480,OC20 frozen normalized per-case performance
+Phi-4-mini,structured,51,480,OC20 frozen normalized per-case performance
+Phi-4-mini,report,46,480,OC20 frozen normalized per-case performance
+SmolLM3-3B,structured,96,480,OC20 frozen normalized per-case performance
+SmolLM3-3B,report,47,480,OC20 frozen normalized per-case performance
+Qwen3-32B-AWQ,structured,348,480,OC20 frozen normalized per-case performance
+Qwen3-32B-AWQ,report,219,480,OC20 frozen normalized per-case performance

@@ -1,0 +1,5 @@
+model,model_key,answerable,strict_correct,strict_pct,normalized_correct,normalized_pct,repaired_correct,repaired_pct,gain_repair_pct_points,normalized_ci_lower_pct,normalized_ci_upper_pct,insufficient,correct_abstention,strict_single_id,normalized_single_id,fenced,multiple_ids,truncated
+Qwen3-4B-Instruct-2507,qwen,960,245,25.521,245,25.521,593,61.771,36.25,23.333,27.711,576,0,1536,1536,0,0,0
+Phi-4-mini-instruct,phi,960,82,8.542,97,10.104,284,29.583,19.479,8.125,12.188,576,0,923,1490,573,46,0
+SmolLM3-3B,smol,960,1,0.104,143,14.896,260,27.083,12.188,12.812,17.292,576,0,32,1200,1492,331,5
+Qwen3-32B-AWQ,qwen32b,960,0,0.0,567,59.062,723,75.312,16.25,56.563,61.562,576,0,0,1536,1536,0,0

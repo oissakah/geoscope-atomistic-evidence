@@ -1,0 +1,30 @@
+{
+  "case_to_group_sha256": "6f509bd59683d53909ebb10125ed0eed406753a13f6dbda483e2c0347d8564de",
+  "expected_base_cases": 768,
+  "expected_groups": 48,
+  "expected_requests": 1536,
+  "legacy_qwen_snapshot": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "max_input": 6144,
+  "max_new_tokens": 160,
+  "min_source_status": "OC20_EXTERNAL_SOURCE_GATE_PASS_NO_GPU_RUN",
+  "model_families": [
+    "qwen",
+    "phi",
+    "smol",
+    "qwen32b"
+  ],
+  "model_only": {
+    "BUILD_STATUS.json": "d7ace47ef2488a9043567b1f80b85ec549a614126f108351de1afd729cfb385d",
+    "SEAL_OFFLINE/gold_proofs_SEALED.json": "1a99d47f080648b9e72c631930cfeca9a27f24bca0731c7413ac6cd20b6fe331",
+    "benchmark_audit.json": "4b81d5efbeb80a4728fbf188fe94bbc34d3ee97b37cfa733ca1df34e8306b143",
+    "initial_requests_PUBLIC_ONLY.jsonl": "3c35089f6ef9ce0c2df611d8340412eea6d9d7352e59cf8bd5b5a9f26a7bbbbf",
+    "public_cases.json": "4d9a70cad9720c02033f6698b3f834c6fa858294b08954944b0586438945014d"
+  },
+  "note": "Do not alter the benchmark based on responses. Sealed gold must remain in the v1.5 project and only enter offline collection after inference.",
+  "official_source_sha256": "1f3ee03a4e605970f187fcf8417ba857effc194a3ea62034c7ff55754f9f1d98",
+  "original_model_manifest_sha256": "21e9ab456387efc2ba228cdcbcd8a7a5f68ea8533a6401eb5a74ee7a6f091c64",
+  "prior_baseline_git_sha": "4932b4f574203d4d02689727dd7c6e5ed1fb7555",
+  "source_archive_sha256": "0ddac7e573cd5a661b3cf3c362655efdb0d87bac7fd8dae72aad3c7b87086659",
+  "source_official_md5": "bc74b6474a13542cc56eaa97bd51adfc",
+  "staged_requests_sha256": "3c35089f6ef9ce0c2df611d8340412eea6d9d7352e59cf8bd5b5a9f26a7bbbbf"
+}

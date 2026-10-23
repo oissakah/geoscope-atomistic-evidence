@@ -1,0 +1,5 @@
+model,n_answerable,decision_score_available,high_confidence,high_confidence_wrong,insufficient_cases,valid_insufficiency_abstentions,source
+Qwen3-4B,960,960,800,594,576,0,Four-model archived confidence analysis
+Phi-4-mini,960,918,0,0,576,0,Four-model archived confidence analysis
+SmolLM3-3B,960,735,29,21,576,0,Four-model archived confidence analysis
+Qwen3-32B-AWQ,960,960,601,185,576,0,Four-model archived confidence analysis

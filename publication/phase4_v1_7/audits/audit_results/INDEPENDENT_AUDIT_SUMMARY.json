@@ -1,0 +1,93 @@
+{
+  "archive_integrity": {
+    "all_pass": true,
+    "checked": 11,
+    "member_sha256_checks": {
+      "confidence_results": 230,
+      "four_model_results": 173
+    }
+  },
+  "benchmark": {
+    "base_cases": 768,
+    "independent_full_physics_enumeration": false,
+    "labels": {
+      "CONTRADICTED": 480,
+      "INSUFFICIENT_EVIDENCE": 576,
+      "SUPPORTED": 480
+    },
+    "presentations": {
+      "report": 768,
+      "structured": 768
+    },
+    "questions": 1536,
+    "report_cases_paired_gold_verdict_and_operation_consistency": 768,
+    "sealed_valid_proof_reference_checks": "VALID_REFERENCES_AND_LABEL_CONSISTENCY_ONLY",
+    "source_groups": 48,
+    "source_pairs": 96,
+    "structured_proofs_exact_match": 768,
+    "structured_public_cases_independently_reenumerated": 768
+  },
+  "confidence": {
+    "AUROC_outcomes_prior_scoring": {
+      "phi": 0.5522558609691475,
+      "qwen": 0.6362009419152276,
+      "qwen32b": 0.7237861877386899,
+      "smol": 0.5670596295596295
+    },
+    "exact_matches": 6144,
+    "replays": 6144
+  },
+  "models_recomputed_from_case_audit": {
+    "phi": {
+      "correct_abstention": 0,
+      "normalized_correct": 97,
+      "repaired_correct": 284,
+      "strict_correct": 82
+    },
+    "qwen": {
+      "correct_abstention": 0,
+      "normalized_correct": 245,
+      "repaired_correct": 593,
+      "strict_correct": 245
+    },
+    "qwen32b": {
+      "correct_abstention": 0,
+      "normalized_correct": 567,
+      "repaired_correct": 723,
+      "strict_correct": 0
+    },
+    "smol": {
+      "correct_abstention": 0,
+      "normalized_correct": 143,
+      "repaired_correct": 260,
+      "strict_correct": 1
+    }
+  },
+  "publication_freeze_scope": "LOCAL_SNAPSHOT_OF_UPLOADED_ARCHIVES; no writes to Swan, GitHub, upstream model weights or original manuscript",
+  "source_geometry": {
+    "atom_count_min_max": [
+      34,
+      159
+    ],
+    "caution": "Independent implementation tests numerical agreement under shared heuristic covalent radii and PBC definitions; external chemist validation remains pending.",
+    "full_adsorbate_internal_rmsds_recomputed": 48,
+    "full_internal_max_absolute_error_angstrom": 1.1102230246251565e-16,
+    "human_review": "NOT_DONE",
+    "max_frame_rmsd_absolute_error_angstrom": 0.0,
+    "max_two_atom_internal_error_angstrom": 2.740863092043355e-16,
+    "maximum_fixed_atom_displacement_angstrom": 0.0,
+    "multiactom_internal_rmsd_values_recomputed": 33,
+    "non_two_atom_internal_rmsd_independently_recomputed": 0,
+    "real_and_synthetic_source_records": 96,
+    "real_frame_values_recomputed": 144,
+    "systems": 48,
+    "two_atom_internal_rmsd_values_recomputed": 15
+  },
+  "source_provenance": {
+    "external_trajectory_tar_sha256_reported_by_swan": "1f3ee03a4e605970f187fcf8417ba857effc194a3ea62034c7ff55754f9f1d98",
+    "local_trajectory_tar_available_for_rehash": false,
+    "official_md5": "bc74b6474a13542cc56eaa97bd51adfc",
+    "official_md5_verified_by_swan": "bc74b6474a13542cc56eaa97bd51adfc",
+    "published_dataset": "OC20 IS2RE/IS2RS val_ood_both"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "input_sha256": "3c35089f6ef9ce0c2df611d8340412eea6d9d7352e59cf8bd5b5a9f26a7bbbbf",
+  "n_groups": 48,
+  "n_requests": 1536,
+  "n_shards": 12,
+  "sealed_gold_staged": false,
+  "shards": [
+    {
+      "count": 128,
+      "file": "requests_shard_00.jsonl",
+      "groups": [
+        "oc20_external_016e64643282f815",
+        "oc20_external_498a32287f56aae3",
+        "oc20_external_947dc7e84257284b",
+        "oc20_external_cc8197ec7d3ffde9"
+      ],
+      "sha256": "3b94ee81f40b3ede0de82bdfc463ee5ef015404ac2e9b379b054cc6afffbdbdd",
+      "shard": 0
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_01.jsonl",
+      "groups": [
+        "oc20_external_0c2c922b9cdf7066",
+        "oc20_external_4baf6339a02c6963",
+        "oc20_external_94bd882f73f3442d",
+        "oc20_external_d5df4ec24f4c19c7"
+      ],
+      "sha256": "2c2c7764101600eda2119760862a4c6db97dcf6e1c7f2e695faefe1e9e76cdb6",
+      "shard": 1
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_02.jsonl",
+      "groups": [
+        "oc20_external_0d0263ddf258d735",
+        "oc20_external_50bd4a72db2da8d9",
+        "oc20_external_9591dd3ba40aea3d",
+        "oc20_external_dc19e625bb539363"
+      ],
+      "sha256": "2a914b7b27c4fa1c4886f9cefaeaf074adda64f08e71d92487810cb70a7bd169",
+      "shard": 2
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_03.jsonl",
+      "groups": [
+        "oc20_external_0d672b2d96a5d6d4",
+        "oc20_external_55a5cc9da53bf022",
+        "oc20_external_9a14b38307e58db1",
+        "oc20_external_df75ae4146a35fd1"
+      ],
+      "sha256": "3204b97f589c7073e349f5fe16ab1a749383ef6500aa594bca8128965cefa616",
+      "shard": 3
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_04.jsonl",
+      "groups": [
+        "oc20_external_0fc89a11db5d2187",
+        "oc20_external_5b7b7d2d4c07b72e",
+        "oc20_external_a3e36d36a726e98c",
+        "oc20_external_e687dbd100710bf6"
+      ],
+      "sha256": "598a212593374db63653fd897f99b3a9691663389df5e4c9da370ecdba74236b",
+      "shard": 4
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_05.jsonl",
+      "groups": [
+        "oc20_external_161e679138ac64de",
+        "oc20_external_6437dd53661f541a",
+        "oc20_external_a675001ef627c884",
+        "oc20_external_e89b8e3bfe0acc1a"
+      ],
+      "sha256": "7294c24633a66a3552ac453697f16b6d586c61470062d4da59d6c521639056f3",
+      "shard": 5
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_06.jsonl",
+      "groups": [
+        "oc20_external_1d9867da6e891025",
+        "oc20_external_7053c8964913d26c",
+        "oc20_external_a72ba458849359d0",
+        "oc20_external_eceb0647df28239c"
+      ],
+      "sha256": "08623219b240fea8023bb962be2194ea4ea7f5b521903afb12c558cdbb7fcf4a",
+      "shard": 6
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_07.jsonl",
+      "groups": [
+        "oc20_external_1ec918a9381404f7",
+        "oc20_external_73f6731f6a7799f1",
+        "oc20_external_b4def9b7bddcee89",
+        "oc20_external_ecedb4251b6fea41"
+      ],
+      "sha256": "669cbe6d44c783bf7b84b9e043e39ca5f002ad7b14ab40f95d8957f5248a5cb0",
+      "shard": 7
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_08.jsonl",
+      "groups": [
+        "oc20_external_2cfe0049464923d4",
+        "oc20_external_7bb90c3e142b4ca1",
+        "oc20_external_b7176ebeec812e72",
+        "oc20_external_ee88820573f41b9f"
+      ],
+      "sha256": "300322c8dbc580ec4cacdc9f9921cd607217a1bba4199239aa73dab190e8256b",
+      "shard": 8
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_09.jsonl",
+      "groups": [
+        "oc20_external_31c75ecd46414e74",
+        "oc20_external_7c612c7d19758d1f",
+        "oc20_external_c1f4b238fad8dd5e",
+        "oc20_external_f0e7993645015001"
+      ],
+      "sha256": "8ebf4cd56852dc58f363132cdd2b9e66da2e212c3368b9f87a862224df195a85",
+      "shard": 9
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_10.jsonl",
+      "groups": [
+        "oc20_external_33cd0146e19f96c3",
+        "oc20_external_861fca1ecc004bfc",
+        "oc20_external_c3b625e8d7e1e09f",
+        "oc20_external_f753a3dddd15ea5c"
+      ],
+      "sha256": "afbd7ca4579ec2ba1c2a237df7abdaafdc75959acfc7c793df7fcb7159698bc7",
+      "shard": 10
+    },
+    {
+      "count": 128,
+      "file": "requests_shard_11.jsonl",
+      "groups": [
+        "oc20_external_443c8010af847e1d",
+        "oc20_external_8ea58d761dea3df3",
+        "oc20_external_c87a6aaa83d9a94b",
+        "oc20_external_fa5341ed3fa5efd8"
+      ],
+      "sha256": "63533fb3bda15380a75f28bf3cdb9c70dcd09a8bf38178cd604b0c4f7bedfc4b",
+      "shard": 11
+    }
+  ],
+  "source_gold_sha256": "1a99d47f080648b9e72c631930cfeca9a27f24bca0731c7413ac6cd20b6fe331",
+  "source_public_sha256": "4d9a70cad9720c02033f6698b3f834c6fa858294b08954944b0586438945014d",
+  "status": "PASS_PUBLIC_ONLY"
+}
