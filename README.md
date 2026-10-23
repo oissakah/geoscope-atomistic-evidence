@@ -78,3 +78,14 @@ The tests use synthetic fixtures for software verification. They are separate fr
 This is a controlled same-domain evaluation of three compact instruction models. Disjoint source IDs do not establish new chemical families or independence from model training. UMA convergence and geometric consistency do not establish DFT accuracy, chemisorption, catalyst quality or a global minimum. The final groups have now been inspected; subsequent tuning on them would make them development data.
 
 No model weights or environments are included. Original structural trajectories and development result archives remain separately hashed parent artifacts; they are required for the complete atomistic audit trail. See [sources, acknowledgments and upstream terms](THIRD_PARTY_NOTES.md). A blanket license for the project's original code has not been selected.
+
+
+---
+
+## Phase 4 v1.7 — Four-model external validation and confidence audit (publication snapshot)
+
+The original Phase 3 controlled benchmark remains unchanged. A separate [Phase 4 v1.7 publication snapshot](publication/phase4_v1_7/README.md) adds 48 OC20 external source systems, 1,536 paired scientific-evidence questions, four open-weight model evaluations (6,144 responses), and a matching token-confidence study. The extended publication includes a main LaTeX manuscript, Supplementary Information, and [reproducible figures and per-figure CSV inputs](publication/phase4_v1_7/publication_figures/README.md).
+
+On the 960 answerable OC20 questions, format-normalized scientific-proof validity was 245/960 (Qwen3-4B), 97/960 (Phi-4-mini), 143/960 (SmolLM3-3B), and 567/960 (Qwen3-32B-AWQ). Strict-format scoring and oracle-assisted repair are reported separately. Decision-confidence AUROC was 0.636, 0.552, 0.567, and 0.724, respectively, on eligible answerable cases. Even the largest model could be highly confident in scientifically invalid selections.
+
+The deterministic verifier can enumerate all licensed proofs on these structured benchmark packets, so this study **does not** establish that a hybrid LLM-verifier outperforms deterministic-only inference. External expert chemical review is not yet complete; the manuscript is a draft, not a submission-ready claim. See the [freeze audit status](publication/phase4_v1_7/FREEZE_AUDIT_STATUS.md).

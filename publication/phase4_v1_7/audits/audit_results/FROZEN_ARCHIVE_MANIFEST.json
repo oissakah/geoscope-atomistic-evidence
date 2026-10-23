@@ -1,0 +1,82 @@
+{
+  "files": {
+    "alc_holdout": {
+      "bytes": 488430,
+      "filename": "GeoScope_Phase4_v1_1_benchmark_results_20261022T202908Z.zip",
+      "members": 17,
+      "sha256": "6aef57bb871fdaca6c184e7d292f4ee1704baa0283b6ac3d86112a37b1f37ba6",
+      "zip_integrity": "PASS"
+    },
+    "confidence_analysis": {
+      "bytes": 1067516,
+      "filename": "GeoScope_Phase4_v1_7_FOURMODEL_CONFIDENCE_ANALYSIS.zip",
+      "members": 14,
+      "sha256": "4829f914a5cc8ce2e9352344a0332377d20f1942703b951703ddc1b18be4c7b4",
+      "zip_integrity": "PASS"
+    },
+    "confidence_final_code": {
+      "bytes": 1960107,
+      "filename": "GeoScope_Phase4_v1_7_4_OC20_confidence_slurm_pathfix.zip",
+      "members": 99,
+      "sha256": "8119ff9eed6a46df4a35692049ce1b0788592c358c201ac1ac843586819e15a2",
+      "zip_integrity": "PASS"
+    },
+    "confidence_results": {
+      "bytes": 3160721,
+      "filename": "GeoScope_Phase4_v1_7_CONFIDENCE_results_20261023T200515Z.zip",
+      "members": 232,
+      "sha256": "2e954550f73aa497caf4c591c2b1d86b9c9a1971867bfb5a4ce4000ee1a9993d",
+      "zip_integrity": "PASS"
+    },
+    "external_source": {
+      "bytes": 1417777,
+      "filename": "GeoScope_Phase4_v1_5_OC20_external_gate_results_20261023T142306Z.zip",
+      "members": 31,
+      "sha256": "0ddac7e573cd5a661b3cf3c362655efdb0d87bac7fd8dae72aad3c7b87086659",
+      "zip_integrity": "PASS"
+    },
+    "four_model_analysis": {
+      "bytes": 263198,
+      "filename": "GeoScope_Phase4_v1_6_FOURMODEL_EXTERNAL_ANALYSIS.zip",
+      "members": 11,
+      "sha256": "85b49d6ff7d17e845bbfc745625d3cd1c9561be1064b8224e835508c9a14aa79",
+      "zip_integrity": "PASS"
+    },
+    "four_model_code": {
+      "bytes": 1145462,
+      "filename": "GeoScope_Phase4_v1_6_1_OC20_fourmodel_GPU_fix.zip",
+      "members": 33,
+      "sha256": "7527264b423b36e309908c201fb91ab0d1acc4ff6f0543fb8bd98d5861ecf597",
+      "zip_integrity": "PASS"
+    },
+    "four_model_results": {
+      "bytes": 1881687,
+      "filename": "GeoScope_Phase4_v1_6_OC20_FOURMODEL_results_20261023T165627Z.zip",
+      "members": 175,
+      "sha256": "dd55440fe0285467edf36cb7272e3c0bb653a4b3d6a37a7c14d7dcc3a3e54f66",
+      "zip_integrity": "PASS"
+    },
+    "oc20_source_gate_code": {
+      "bytes": 49440,
+      "filename": "GeoScope_Phase4_v1_5_2_OC20_IS2RES_external_gate.zip",
+      "members": 32,
+      "sha256": "c97b6320c564ab22c10feefcdc8ee7cf31397cc0db92212f3c263dd59ce173ba",
+      "zip_integrity": "PASS"
+    },
+    "original_manuscript": {
+      "bytes": 658083,
+      "filename": "GeoScope_manuscript_updated_scientific_narrative.zip",
+      "members": 25,
+      "sha256": "9c586aa8fb5b583eb8aab2edc5cbb5bd0a21f4dd574949cba6a5692e29e4ddc2",
+      "zip_integrity": "PASS"
+    },
+    "original_results": {
+      "bytes": 373708,
+      "filename": "GeoScope_Phase4_RESULTS_20261022_172058.zip",
+      "members": 41,
+      "sha256": "2831de63579921f548e6f44ad238d74477ec5575681bd0cf8bf183322f2519ec",
+      "zip_integrity": "PASS"
+    }
+  },
+  "freeze_date_utc": "2026-10-23"
+}

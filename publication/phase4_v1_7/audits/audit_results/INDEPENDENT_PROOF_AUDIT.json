@@ -1,0 +1,12 @@
+{
+  "independent_arithmetic_rule_engine": "standalone proof enumeration on structured payloads; no GeoScope function imports",
+  "structured_cases_checked": 768,
+  "structured_cases_proof_exact_matches": 768,
+  "mismatches": [],
+  "paired_report_cases_same_gold_by_base": 768,
+  "limitations": [
+    "Independent checker shares the same declared physical axioms; not ground truth external to the benchmark.",
+    "Report text not independently parsed or proof-enumerated, although paired proof-key correspondence was verified.",
+    "Floating-point near-equality boundaries not specially tested."
+  ]
+}

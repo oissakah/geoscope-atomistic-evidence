@@ -1,0 +1,9 @@
+model,presentation,AUROC,source
+Qwen3-4B,structured,0.6969838814718333,Four-model confidence summary
+Qwen3-4B,report,0.5472800193803666,Four-model confidence summary
+Phi-4-mini,structured,0.5892925797770089,Four-model confidence summary
+Phi-4-mini,report,0.4995262659227287,Four-model confidence summary
+SmolLM3-3B,structured,0.5600802644003777,Four-model confidence summary
+SmolLM3-3B,report,0.5774058577405857,Four-model confidence summary
+Qwen3-32B-AWQ,structured,0.7489986067572274,Four-model confidence summary
+Qwen3-32B-AWQ,report,0.6467223009499816,Four-model confidence summary

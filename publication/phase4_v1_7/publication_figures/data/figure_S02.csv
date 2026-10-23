@@ -1,0 +1,5 @@
+model,n_answerable,n_correct,source
+Qwen3-4B,1100,312,Original manuscript Figure 5 / coverage Results
+Phi-4-mini,1100,121,Original manuscript Figure 5 / coverage Results
+SmolLM3-3B,1100,168,Original manuscript Figure 5 / coverage Results
+Rule-only oracle,1100,1100,Original manuscript Figure 5 / coverage Results

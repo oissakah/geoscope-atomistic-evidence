@@ -1,0 +1,5 @@
+stage,heading,detail,source
+A,Original: UMA-relaxed OC20-Dense,"55 source groups | 1,760 cases | 3 LLMs","Frozen GeoScope manuscript, methodology"
+B,Independent OC20 trajectory validation,"48 systems | 1,536 cases | 4 LLMs","Frozen GeoScope manuscript, methodology"
+C,Frozen-response token-confidence replay,"6,144 exact replays | decision-token confidence","Frozen GeoScope manuscript, methodology"
+D,Scientific comparison,definition checks | operation repair | abstention limits,"Frozen GeoScope manuscript, methodology"

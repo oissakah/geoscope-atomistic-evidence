@@ -1,0 +1,9 @@
+model,collection,valid,n_answerable,source
+Qwen3-4B,Internal holdout,99,348,v1.3 and v1.4 offline analysis
+Qwen3-4B,External OC20,245,960,v1.6 external four-model analysis
+Phi-4-mini,Internal holdout,40,348,v1.3 and v1.4 offline analysis
+Phi-4-mini,External OC20,97,960,v1.6 external four-model analysis
+SmolLM3-3B,Internal holdout,43,348,v1.3 and v1.4 offline analysis
+SmolLM3-3B,External OC20,143,960,v1.6 external four-model analysis
+Qwen3-32B-AWQ,Internal holdout,206,348,v1.3 and v1.4 offline analysis
+Qwen3-32B-AWQ,External OC20,567,960,v1.6 external four-model analysis

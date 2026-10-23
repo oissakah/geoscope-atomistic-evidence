@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,longtable,array,microtype}
+\usepackage[font=small]{caption}
+\usepackage[section]{placeins}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=12]{biblatex}
+\addbibresource{references.bib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\title{Supplementary Information\\[3pt]\large When Scientific Measurements Mislead Language Models:\\Definition-Aware Verification of Atomistic Evidence}
+\author{Obed Issakah}
+\date{}
+\begin{document}
+\maketitle
+\noindent\textbf{Scope and provenance.} This Supplementary Information (SI) accompanies the frozen GeoScope Phase 4 v1.7 publication snapshot. It extends the original controlled study of 55 UMA-relaxed source groups with the separately acquired OC20 trajectory study (48 groups) and the token-confidence replay. All 11 supplementary figures are regenerated from the paired CSV files by Python scripts supplied in \texttt{publication\_figures.zip}. The SI does not revise frozen model outputs or benchmark labels. The original 55-system coordinate table was not available for regenerating its old scatterplot; Fig.~S1 is deliberately limited to reported summary statistics. Independent domain-expert chemical review is still outstanding.
+
+\section{Supplementary Methods}
+\subsection{Measurement definitions and physical admissibility}
+The same unit can describe incompatible measurements. Let $\mathbf r_i^{(0)}$ and $\mathbf r_i^{(1)}$ be the stored positions of matched atom $i$ in two configurations, and let $\operatorname{MIC}$ select a minimum-image displacement for the periodic cell. If $S$ is an atom subset with $n_S$ atoms, the equal-weight stored-frame root-mean-square deviation is
+\begin{equation}
+ R_S=\left[\frac{1}{n_S}\sum_{i\in S}\left\|\operatorname{MIC}(\mathbf r_i^{(1)}-\mathbf r_i^{(0)})\right\|^2\right]^{1/2}.
+\end{equation}
+For the adsorbate subset $S_A$ the result is $A=R_{S_A}$; for the mobile subset $S_M$ it is $M=R_{S_M}$. The fixed-atom subset is checked separately. Both $A$ and $M$ retain displacement in the common stored slab coordinate frame and require compatible positions, periodic flags, cell, atom identities and comparison endpoints. Internal adsorbate RMSD $I$ is different: periodic bond-graph unwrapping reconstructs molecular coordinates; independently centered coordinate sets are aligned by a proper (non-reflecting) rotation using the Kabsch procedure, minimizing residual squared distances. Consequently, a change of rigid position or orientation can increase $A$ while leaving $I$ small. The graph uses a heuristic geometric bond criterion rather than a chemically validated bond-order model.
+
+If $S_A\subset S_M$, the same displacements and weighting apply and $n_A,n_M$ denote the respective numbers of atoms, then
+\begin{equation}
+ M^2=\frac{n_A A^2+\sum_{i\in S_M\setminus S_A}\|\mathbf d_i\|^2}{n_M},\quad
+ M\ge \sqrt{\frac{n_A}{n_M}}\,A,\quad
+ A\le \sqrt{\frac{n_M}{n_A}}\,M.
+\end{equation}
+These bounds do not apply to $I$ or to another endpoint pair, atom weighting, or coordinate convention. A proof requires the metric identifier, pair, subset, frame, alignment, periodic treatment, weights, units and selected operation to be licensed. A wrong numerical operation may yield a fortuitously correct scientific verdict without constituting a valid proof.
+
+\subsection{Original UMA-relaxed benchmark: design and frozen sample}
+The original study used OC20-Dense starting geometries with UMA \texttt{uma-s-1p2p1} and ASE FIRE relaxation. Initial and final positions of 55 qualifying source groups were retained after convergence and geometric checks (from 60 attempted groups). Twenty development groups had been excluded before final selection, and source selection was fixed using seed 20261021. The source qualification checked atom identity, constraints, cell, periodic flags, force convergence, fixed atoms, and stability of a heuristic adsorbate graph. Each accepted geometry also supplied a synthetic adsorbate translation control, explicitly distinguished from a physical relaxation.\cite{chanussot2021open,wood2025uma,larsen2017atomic}
+
+The benchmark comprised 1,760 claim variants: 550 supported, 550 contradicted, and 660 insufficient-evidence. Thus 1,100 cases were answerable. Original three-model inference used one response for each direct-answer and evidence-selection prompt per variant. The deterministic arithmetic-only, comparison-ID and full-definition checkers were applied to the \emph{same} evidence selections; no check retrieved replacement evidence. The exhaustive enumerator reproduced all labels by construction when every public record and rule was supplied.
+
+\begin{table}[htbp]\centering\small
+\caption{Original-study benchmark and primary full-definition results. Values from the frozen original manuscript; original primary raw-result parent ZIP was not available for a new from-scratch response-level reconstruction here.}
+\begin{tabular}{lr}\toprule Quantity&Count\\\midrule
+Qualified UMA-relaxed source groups&55\\
+All benchmark cases&1760\\
+Answerable cases&1100\\
+Insufficient-evidence cases&660\\
+Qwen full-definition licensed numerical answers&312\\
+Qwen additional comparison-ID acceptances rejected&81\\
+Of those, wrong verdict / correct verdict but invalid proof&42 / 39\\
+\bottomrule\end{tabular}
+\end{table}
+
+\subsection{External OC20 validation source gate}
+The external study instead used the OC20 IS2RE/IS2RS \texttt{val\_ood\_both} per-system relaxation trajectories, not interleaved S2EF snapshot batches.\cite{chanussot2021open} The official archive download was checked against published MD5 \texttt{bc74b6474a13542cc56eaa97bd51adfc}. Its selected file hashes and selection order are preserved in the source gate. A SHA-based fixed order admitted 48 unique systems among the first 49 examined; this does not estimate the whole-dataset acceptance rate. One candidate was rejected for synthetic-control graph inconsistency. Each qualified pair uses the first and last \emph{stored} trajectory frame, not necessarily a fully relaxed minimum; the control is a synthetic comparison, not a second DFT trajectory. There are 16 base claims per physical source group and two evidence presentations per claim. Thus the external benchmark contains $48\times16\times2=1536$ questions with 480 supported, 480 contradicted, and 576 insufficient-evidence outcomes. Paired presentations were kept together when sharding the workload.
+
+Independent recomputation checked 144 shared-frame RMSD values (mobile, adsorbate and fixed, three per system), and separately recalculated all 48 aligned internal adsorbate RMSDs; agreement was within numerical precision. A separately implemented proof checker reproduced all 768 structured reference proof lists. The paired 768 written-rendering cases had matching verdicts and allowed operation classes; alias IDs differ by presentation. These reproducibility checks do \emph{not} independently validate the bond heuristic, the scientific adequacy of every proof axiom, or model-pretraining exclusion.
+
+\begin{table}[htbp]\centering\small
+\caption{External OC20 source gate and benchmark sizes.}
+\begin{tabular}{lr}\toprule Quantity&Count\\\midrule
+Selected physical source systems&48\\
+Candidates screened before target reached&49\\
+Structures with independently reproduced internal RMSD&48\\
+Paired scientific base cases&768\\
+Structured questions / written reports&768 / 768\\
+Supported / contradicted / insufficient cases&480 / 480 / 576\\
+Questions per model / total four-model predictions&1536 / 6144\\
+\bottomrule\end{tabular}
+\end{table}
+
+\subsection{Model output parsing and proof evaluation}
+Four frozen open-weight checkpoints were evaluated: Qwen3-4B-Instruct-2507, Phi-4-mini-instruct, SmolLM3-3B, and Qwen3-32B-AWQ. The 32B model uses four-bit quantized weights and a separate inference backend; cross-model differences are not a controlled model-size intervention. Strict parsing required the declared single-evidence JSON form with no enclosing code fence. Fence-normalized parsing removes only an outer Markdown code block; it does not change the model's evidence ID, operation or verdict. The frozen operation-only repair enumerates alternative licensed operations \emph{for the model-selected evidence ID}; it is an oracle-assisted diagnostic, not proof of a deployable tool or of improved intrinsic model reasoning. Neither a malformed selection nor a verifier rejection counts as a correct scientific abstention.
+
+\subsection{Confidence replay and statistical interpretation}
+All 6,144 external questions were replayed with per-token probability extraction. Every replay matched its original output exactly. For a response whose evidence identifier and operation can be unambiguously token-located, the decision-token score is the geometric mean of probabilities $p_t$ assigned to its own produced decision tokens $t$:
+\begin{equation}
+ G=\exp\!\left(\frac{1}{|T|}\sum_{t\in T}\log p_t\right),
+\end{equation}
+where $T$ contains the extracted evidence-ID and operation tokens; $|T|$ is their number. The score is not calibrated $P(\mathrm{scientifically\ correct}\mid\mathrm{answer})$. AUROC measures how well $G$ orders correct versus incorrect proof selections among answerable cases. Top-decile performance retains the highest-confidence 10\% of eligible answers per model. Availability was 960/960, 918/960, 735/960 and 960/960 for Qwen3-4B, Phi, SmolLM and Qwen3-32B, respectively. Missing decision spans are excluded transparently, not imputed. These retrospective analyses are \emph{not} independent deployment-threshold calibration. Raw per-token log-probability vectors were not archived; the frozen span summaries and extraction code were retained.
+
+\subsection{Uncertainty and dependency between cases}
+Original-study intervals used 1,000 bootstrap resamples of the 55 complete source groups (seed 20261021), with all prompts and paired cases from a group kept together. Phase 4 external and confidence intervals resampled the 48 complete external source groups; the confidence package used 1,200 source-group bootstrap replicates. Percentile 95\% intervals are descriptive. They do not account for unknown model pretraining overlap or broader benchmark selection bias. Unadjusted multiple exploratory comparisons should not be presented as independent confirmatory effects.
+
+\section{Supplementary Figures: Original Controlled Study}
+\begin{figure}[htbp]\centering\includegraphics[width=.85\linewidth]{figure_S01.pdf}\caption{Original 55-group UMA-relaxed RMSD summary: median stored-frame-to-aligned internal RMSD ratio 3.27, with 16/55 groups exceeding a factor of 10. These are archived summary values; no synthetic recreation of the unavailable 55-group scatter coordinates was attempted.}\label{fig:si_physical}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=.89\linewidth]{figure_S02.pdf}\caption{Original full-definition numerical coverage among 1,100 answerable cases per model. The rule-only oracle is a constructed-program baseline and can enumerate every licensed proof by design.}\label{fig:si_coverage}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=.90\linewidth]{figure_S03.pdf}\caption{Original-study valid numerical coverage by evidence presentation, each with 550 answerable cases. Report rendering omits redundant names in addition to changing presentation, so differences should not be attributed to prose alone.}\label{fig:si_presentation}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figure_S04.pdf}\caption{Original-study valid-answer coverage by claim family. Counts were transcribed from the archived published original Figure 7 and reproduce its denominators (440 direct, 220 unit-conversion, 220 mobile lower-bound and 220 adsorbate upper-bound cases). The 100\% rule-only oracle column is omitted from the heatmap for visual contrast.}\label{fig:si_families}\end{figure}
+
+\section{Supplementary Figures: External OC20 Study}
+\begin{figure}[htbp]\centering\includegraphics[width=.84\linewidth]{figure_S05.pdf}\caption{Balance of external OC20 gold-label classes in the sealed 1,536-question benchmark. The figure displays benchmark construction, not model accuracy.}\label{fig:si_balance}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figure_S06.pdf}\caption{Answerable OC20 error taxonomy for four models after removing only outer Markdown code fences. Valid proofs, correct evidence with wrong operations, wrong endpoint pairs, wrong physical measurements, and other invalid selections are distinct. Each column totals 960.}\label{fig:si_errors}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figure_S07.pdf}\caption{External OC20 valid proofs by structured versus written presentation, with 480 answerable cases per model and presentation. Unlike a controlled language-only intervention, the presentations also differ in redundant naming cues.}\label{fig:si_external_presentation}\end{figure}
+
+\section{Supplementary Figures: Confidence and Generalization}
+\begin{figure}[htbp]\centering\includegraphics[width=.93\linewidth]{figure_S08.pdf}\caption{Retained-set proof accuracy versus fraction of eligible answerable responses kept, using each model's decision-token likelihood ordering. The 100\% endpoint excludes missing decision-token confidence values and therefore need not equal accuracy over all 960 answerable questions. Thresholds were not selected on an independent calibration set.}\label{fig:si_selective}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=.90\linewidth]{figure_S09.pdf}\caption{Decision-token confidence AUROC by structured and report presentations, separately for each model. Scores quantify correctness ranking on answerable cases, not scientific-abstention discrimination.}\label{fig:si_conf_presentation}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=.90\linewidth]{figure_S10.pdf}\caption{Missing decision-token span scores among answerable cases. Phi and SmolLM missing values must remain visible in confidence-based comparisons; all models had zero exactly valid abstentions on the 576 insufficient-evidence cases per model.}\label{fig:si_missing}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figure_S11.pdf}\caption{Descriptive comparison of fence-normalized licensed proofs on the original 18-group within-collection Phase 4 holdout and external 48-system OC20 sample (348 and 960 answerable cases per model, respectively). Neither collection excludes potential language-model pretraining exposure.}\label{fig:si_generalization}\end{figure}
+
+\section{Extended Limitations and Reproducibility}
+\paragraph{Deterministic-only baseline.} The rule-only enumerator reconstructs all public-evidence permitted proof lists by construction. Its result is not a held-out learned generalization benchmark and should not be confused with evidence that a model--verifier architecture beats deterministic-only computation.
+\paragraph{Abstention.} On external OC20, no model produced the required exactly formatted justified abstention for the 576 insufficient-evidence questions. A negative proof check must be separated from a complete scientific packet that truly lacks evidence and from an incomplete packet requiring review. A future end-to-end system must evaluate evidence completeness and conflict handling prospectively.
+\paragraph{Source and physical assumptions.} OC20 validation is external to the UMA-generated source collection but not guaranteed unseen in model pretraining. Saved trajectory endpoints need not be converged. Graph connectivity was determined heuristically. The frozen source-gate coordinates and checksums enable numerical rechecks but expert judgments about graph chemistry and proof adequacy remain pending.
+\paragraph{Reproducibility boundary.} All supplied Figure 1--7 and S1--S11 PDFs, SVGs and PNGs are reproducible from the per-figure CSVs via the paired scripts (\texttt{python scripts/build\_all.py}). The original 55-system per-coordinate scatter source was not in the available freeze snapshot, and no full original-study model-output archive was supplied for a new original 10,560-response reproduction. The original summary numbers therefore retain their historical frozen-manuscript provenance and should not be described as freshly recomputed case-level values. The raw published OC20 trajectory tarball is not embedded in the figure package; geometry values are taken from the archived, checksum-verified source-gate audit.
+\paragraph{Human scientific audit.} The blinded 96-item domain-expert review packet is prepared but has not been externally judged. Claims of independent chemical correctness, calibrated scientific truth probabilities, or deployable reliable abstention would require additional prospective evidence.
+
+\printbibliography
+\end{document}
