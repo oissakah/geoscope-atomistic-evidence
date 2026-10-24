@@ -1,7 +1,0 @@
-model,presentation,valid,n_answerable,source
-Qwen3-4B,structured,182,550,"Original manuscript Figure 6 (published percentages, counts reconstructed as integer/550)"
-Qwen3-4B,report,130,550,"Original manuscript Figure 6 (published percentages, counts reconstructed as integer/550)"
-Phi-4-mini,structured,60,550,"Original manuscript Figure 6 (published percentages, counts reconstructed as integer/550)"
-Phi-4-mini,report,61,550,"Original manuscript Figure 6 (published percentages, counts reconstructed as integer/550)"
-SmolLM3-3B,structured,107,550,"Original manuscript Figure 6 (published percentages, counts reconstructed as integer/550)"
-SmolLM3-3B,report,61,550,"Original manuscript Figure 6 (published percentages, counts reconstructed as integer/550)"

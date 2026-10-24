@@ -1,39 +1,23 @@
-# GeoScope — definition-aware verification of atomistic evidence
+# GeoScope — Reproducibility Code
 
-**One scientific question, two complementary atomic source collections:** do language models select measurements and mathematical operations that physically justify claims about atomistic simulations?
+**Unified research question:** Do language models select measurements and mathematical operations that *physically support* their conclusions about atomistic simulations?
 
-Scientific AI can identify the correct structure pair and even produce the correct answer while using an invalid measurement. GeoScope evaluates *licensed scientific proofs*: a proposed claim is supported only when its evidence identifier, compared endpoints, atom set, coordinate frame, alignment, periodic treatment, weighting, and mathematical operation are compatible with the claim. GeoScope is a benchmark and verifier for atomistic evidence; it is **not** a deployed autonomous catalyst-discovery system.
+This is the **code-focused main branch** of GeoScope. It contains the scientific evaluation code, the original frozen-response input archive, essential configuration and pinned provenance, source-generation and GPU/HPC workflows, software tests, and independent audit routines. It deliberately contains **no manuscript, PDFs, publication figures, image files, plotting scripts, or presentation material**.
 
-## Study design
+The complete unified publication/manuscript version was preserved before cleanup as the branch [`draft/unified-manuscript-2026-10-24`](https://github.com/oissakah/geoscope-atomistic-evidence/tree/draft/unified-manuscript-2026-10-24).
 
-| Shared framework | UMA-relaxed OC20-Dense collection | OC20 stored DFT-trajectory collection |
-|---|---|---|
-| Physical evidence | Mobile and adsorbate stored-frame RMSD, adsorbate rigid-aligned internal RMSD, admissible subset bounds | The same measurement types and proof rules |
-| Atomic sources | 55 qualified groups | 48 qualified groups |
-| Claims | 1,760 variants (1,100 answerable; 660 insufficient evidence) | 1,536 variants per model (960 answerable; 576 insufficient evidence) |
-| Models | Qwen3-4B, Phi-4-mini, SmolLM3-3B | The same three plus Qwen3-32B-AWQ |
-| Main analysis | Arithmetic-only vs. comparison-ID vs. full-definition checking; verdict/proof and coverage | Strict vs. fence-normalized scoring; error types; oracle-assisted operation repair; decision-token confidence |
+## What can be reproduced
 
-Both source collections use the same conceptual evidence/proof framework, but their **output-format contracts and central comparisons differ**. Results are reported separately, rather than being pooled as though the evaluations were identical.
+| Collection | Scientific role | What is included |
+| --- | --- | --- |
+| 55 qualified UMA-relaxed OC20-Dense source groups | Identical-selection comparison of increasingly strict physical-definition checks; validity, coverage, and direct-answer evaluation | The archived 1,760 cases, gold proofs, all 10,560 first-attempt model responses, pinned settings, CPU scorer, and the code to rerun scores |
+| 48 OC20 DFT-trajectory source groups | External proof-validity, error taxonomy, output-format and confidence diagnostics | Source gate, inference, confidence, and independent audit **code**, pinned identifiers, compact frozen score tables, and audit metadata |
 
-## Core findings
+**Important external-data limitation:** The external 48-system GPU raw-response and confidence ZIP archives, original large OC20 trajectories, and all of the upstream UMA/Phase 3 parent archives are **not contained in this repository**. The Phase 4 scripts alone cannot reproduce all external numerical results until those exact archived inputs and pinned model environments are supplied. Do not describe the external result as fully self-contained. The pinned archive identities appear in `evidence/phase4/FROZEN_ARCHIVE_MANIFEST.json`.
 
-- In the 55-system collection, full-definition checking retained **312 valid Qwen numerical proofs** and rejected **81 additional invalid acceptances** left by a comparison-ID-only check, including 39 correct verdicts justified by invalid evidence. Valid accepted coverage on 1,100 answerable questions was 28.36% for Qwen.
-- On the independent-source OC20 trajectory collection, Qwen3-32B-AWQ returned **567/960 (59.1%)** valid proofs after *outer Markdown-fence normalization*. Its original strict-JSON score was **0/960** because its responses were fenced. Fence normalization is a formatting diagnostic, not scientific repair.
-- All four external models had **0/576** qualifying scientific abstentions under the frozen output contract. Qwen3-32B-AWQ's decision-token confidence AUROC was **0.724**; **185/601** responses above a 0.99 decision-token score were scientifically invalid.
-- Deterministic proof enumeration resolves all benchmark questions from complete structured public evidence under the predefined rules; this work **does not** show that an LLM/verifier hybrid outperforms deterministic-only inference.
+## Quick start: reproduce the frozen 55-system scores (CPU only)
 
-## Start here
-
-- **[Unified manuscript](publication/phase4_v1_7/manuscript/)** — primary publication draft and Supplementary Information; six integrated Results and Discussion subsections and a shared-framework Figure 1
-- [One-study design and mapping](docs/UNIFIED_STUDY.md) — how the two source collections and figures support the same research question
-- [Publication package guide](publication/phase4_v1_7/README.md) — manuscript, audits, model outputs, figure sources, reproducibility status
-- [Data card](DATA_CARD.md) and [original-study final report](FINAL_REPORT.md) — frozen 55-system methods, source qualification, outcomes, and limitations
-- [External freeze and audit status](publication/phase4_v1_7/FREEZE_AUDIT_STATUS.md) — external verification and unresolved expert-review requirements
-
-## Reproduce the original 55-system analysis
-
-Using Python 3.12 and the standard library, from the repository root:
+Python 3.12, standard library:
 
 ```bash
 python verify_repository.py
@@ -41,24 +25,28 @@ python reproduce_analysis.py
 PYTHONPATH=workflows/phase3_final/src python -m unittest discover -s workflows/phase3_final/tests -v
 ```
 
-The raw original model selections and exact freeze records remain in `evidence/final_results_original.zip`. This archived evidence is not rewritten by the publication update.
+The `reproduce_analysis.py` program authenticates `evidence/final_results_original.zip` and its 69 internal checksums, verifies completeness of the 10,560 original attempts, then recomputes the frozen analysis from raw responses. It writes reports to `recomputed/`. No model download or GPU is required for **score reproduction**. Tests use synthetic software fixtures, not new atomistic calculations.
 
-## Reproduce external publication figures and build the manuscript
+`verify_repository.py` checks a manifest of the retained original frozen input/code files. The branch is also tracked by Git; the manifest is not a claim that every moved workflow file has a second SHA-256 hash.
 
-```bash
-python -m pip install numpy matplotlib reportlab
-cd publication/phase4_v1_7/publication_figures
-python scripts/verify_inputs.py
-python scripts/build_all.py
-cd ../manuscript
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
-latexmk -pdf -interaction=nonstopmode -halt-on-error supplementary.tex
-```
+## Code layout
 
-`latexmk` requires a LaTeX distribution with `biber`. The canonical unified overview is regenerated using `manuscript/figures/make_figure_01.py`; the figure plotting pipeline calls this script for Figure 1, while the other figures retain their original numerical CSV inputs. Read [manuscript build notes](publication/phase4_v1_7/manuscript/README_BUILD.md).
+- `reproduce_analysis.py` — trusted command to replay the original frozen evaluation.
+- `lib/finalstudy/` — proof verifier and deterministic scoring implementation.
+- `evidence/final_results_original.zip` — **required** original input archive; it is not a publication artifact.
+- `workflows/geom_scope_phase1_uma/` — original UMA source and relaxation scripts.
+- `workflows/phase3_prepare/` — frozen physical source qualification.
+- `workflows/phase3_final/` — final inference, benchmark and tests.
+- `workflows/oc20_source_gate/` — external OC20 source records, geometry and benchmark builder.
+- `workflows/external_four_model_inference/` — four-model inference and HPC launch scripts.
+- `workflows/token_confidence/` — confidence replay and offline confidence analysis.
+- `audits/phase4/` — independent consistency/proof and frozen-archive audit routines.
+- `evidence/phase4/` — external compact result tables and archive-identity metadata, **not** complete raw results.
 
-## Scope, provenance, and status
+Slurm `.sbatch` and `.sh` scripts, frozen JSON pins and tests are kept where necessary to rerun the computational workflows. No source archives or model weights are silently substituted.
 
-The original phase-level code, frozen model outputs, source audits, plots and scientific datasets remain archived and traceable. The unified manuscript is an **editorial reorganization of frozen results**, not a new evaluation or claim of external checker-ablation replication. No evidence establishes that the external OC20 systems were absent from LLM pretraining. UMA relaxation and DFT trajectory geometry alone do not establish a globally stable adsorbate or catalytic activity. The complete structural source archives and expert chemical review retain the limitations documented in the freeze reports.
+## Reexecuting physical simulations or GPU inference
 
-**Publication status:** working draft; independent human chemical review and authorship reconciliation are outstanding. See [third-party source notes](THIRD_PARTY_NOTES.md) for reuse considerations. The project has not selected a blanket license for its original code.
+Raw-score replay and rerunning all upstream simulations are **different tasks**. Source generation requires official OC20 structures, ASE/FAIRchem/UMA and its pinned checkpoint, and suitable GPU hardware. The four-model external evaluation requires the exact model and input archives identified in its frozen protocols. For details consult the workflow `EXPERIMENT_PROTOCOL.md` and `HPC_RUNBOOK.md` files and `workflows/phase3_final/PROTOCOL.md`. For scientific source and license restrictions see `THIRD_PARTY_NOTES.md`.
+
+The original archive provenance and immutable publication files remain on the draft branch and in Git history. This cleanup changes repository layout only; it does not create a new experimental result, replace scientific data, or establish independent model-pretraining exclusion or autonomous catalyst-discovery performance.

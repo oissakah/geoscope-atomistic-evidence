@@ -1,7 +1,0 @@
-{
-  "seed": 20261020,
-  "max_new_tokens": 160,
-  "batch_size": 2,
-  "max_input_tokens": 6144,
-  "bootstrap_samples": 1000
-}

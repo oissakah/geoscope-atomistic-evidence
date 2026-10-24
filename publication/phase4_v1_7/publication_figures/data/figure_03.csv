@@ -1,5 +1,0 @@
-model,verdict_pct,proof_aware_pct,denominator,source
-Qwen3-4B,38.81,17.39,1760,Frozen original manuscript Fig. 3 and Results section
-Phi-4-mini,32.56,23.01,1760,Frozen original manuscript Fig. 3 and Results section
-SmolLM3-3B,20.45,3.75,1760,Frozen original manuscript Fig. 3 and Results section
-Rule-only oracle,100,100,1760,Frozen original manuscript Fig. 3 and Results section
