@@ -1,0 +1,34 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Scientific meaning must be checked before using a number}
+
+The original study shows that a correct comparison ID and a correct unit do not ensure a valid scientific proof. Full-definition checking rejected 81 further Qwen answers, including 39 with the correct verdict but wrong supporting evidence (Fig.~\ref{fig:checks}). These failures can arise when a number refers to the wrong atoms, frame, alignment, or operation. The main lesson is simple: the scientific definition is part of the evidence, not optional metadata.
+
+This extends earlier work on evidence support and scientific information use.\cite{gao2023enabling,yu2026scicueval} The contribution here is a controlled atomic example in which the physical definitions can be tested directly. It does not show that the same proof rules apply to every chemistry or materials problem.
+
+\subsection{Filtering errors is not the same as answering more questions}
+
+Full checking kept Qwen's 312 licensed numerical answers but left coverage at 28.36\% of answerable questions. The rule-only program could resolve every constructed case using all supplied records. Thus, a large part of the remaining problem is finding the right evidence, not only rejecting the wrong choice. A checker that rejects a model's selection has not shown that the science lacks enough evidence.
+
+This distinction matters for autonomous research tools. A system that rejects nearly everything may be safe from invalid proofs but of little use in choosing experiments. Future systems could search all allowed records before asking a model to explain the result. Such an end-to-end approach was not evaluated here. ChemCrow and other tool-assisted systems show the promise of combining language models with software, but our results test a different question: whether the selected scientific inputs are suitable.\cite{bran2024augmenting,gao2023pal}
+
+\subsection{External results and model confidence}
+\label{sec:external_discussion}
+
+The external OC20 results show that the same types of error persist across another 48 atomic systems (Fig.~\ref{fig:external_model_comparison}). Qwen3-32B produced more licensed proofs than the smaller models after fence normalization, but it still chose wrong operations, endpoint pairs, or physical measurements (Fig.~\ref{fig:external_error_types}). This does not establish a pure model-size effect: the 32B checkpoint also used a different inference backend and quantized weights.
+
+Confidence added useful ranking information but no guarantee. Qwen3-32B had AUROC 0.724 in Fig.~\ref{fig:confidence_revised}A, yet 185 high-likelihood answers were wrong in Fig.~\ref{fig:confidence_revised}B. A token likelihood describes how likely the model was to generate particular text. It is not a probability that the scientific statement is true. This agrees with the broader need to test evidence, rather than trust the fluency or confidence of a generated answer.\cite{yu2026scicueval,chen2026phyver,zheng2026sciverifier}
+
+No model gave a valid abstention on the 576 external insufficient-evidence questions under the frozen format. This is a failure of the tested models and prompts, not proof that models cannot learn to abstain. A practical system should distinguish a licensed proof, a complete evidence set with no proof, and a case where the available evidence may be incomplete. Each outcome needs its own evaluation.
+
+Our second coordinate implementation reproduced the stored-frame and internal RMSD values. However, the two implementations share a heuristic rule for adsorbate bonds, and external human chemical review remains pending. The OC20 endpoints are stored DFT trajectory frames, not necessarily converged structures. They may have been included in model training data. The report version also changed redundant naming cues. These limits prevent claims about real-world autonomous performance.
+
+The benchmark's rule-only program resolves all questions by construction, so this work does not claim that a model plus checker beats a deterministic method. The operation-repair results are also oracle-assisted tests, not newly learned model predictions. To test a deployable assistant for self-driving labs, future work must examine real reports, missing or conflicting records, new physical systems, and confidence thresholds set on separate data. The frozen GeoScope study remains a diagnostic benchmark, not a validated autonomous controller.
+
+
+\subsection{Study limits}
+
+The 1,760 original questions came from 55 source groups and are not independent physical experiments. Whole-source-group resampling was used for uncertainty. The 55 groups remain within the OC20-Dense domain; 38 share two adsorbate formulas. Two relaxations failed to converge and three more changed the adsorbate distance graph. These systems were not replaced. UMA force convergence and the geometry checks do not prove chemical accuracy, catalytic activity, or the lowest-energy structure.\cite{chanussot2021open,wood2025uma}
+
+The three original models were tested with fixed prompts and output limits. All 10,560 first attempts were included, including 261 truncated SmolLM outputs. The procedure was frozen before final evaluation but was not registered in advance with an external registry. The newer OC20 experiment uses a different source collection and a different strict output-format rule. We compare these studies as separate experiments, not a single controlled scaling test.

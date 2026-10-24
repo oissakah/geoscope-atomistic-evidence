@@ -1,36 +1,42 @@
-# GeoScope: one physical-evidence question, two complementary collections
+# One scientific investigation: GeoScope
 
-**Central question.** Can language models select atomistic measurements and operations that physically justify a conclusion about simulated structures?
+## Research question
 
-GeoScope evaluates *licensed proofs*: an evidence selection is valid only if its source comparison, selected atoms, coordinate frame, alignment, periodic convention, weighting, and permitted mathematical operation support the scientific claim. It does not discover or optimize catalysts.
+Can language models select atomistic measurements and mathematical operations that **physically justify** the scientific claim being made, and are these selections reliable when source collections, evidence presentations, and model configurations change?
 
-## Research design
+This is **one physical-proof framework evaluated under complementary conditions**, not a claim that two experiments used identical protocols.
 
-| Component | UMA-relaxed OC20-Dense collection | External OC20 DFT-trajectory collection |
+## One common scientific mechanism
+
+A measurement is licensed evidence only if it refers to the required source comparison and has compatible physical metadata: selected atoms, coordinate frame, rigid alignment, periodic treatment, weights and permitted operation. The paper distinguishes mobile-atom RMSD (M), stored-frame adsorbate RMSD (A), and aligned internal RMSD (I). Same-frame subset bounds are permitted for M/A under matched conventions, but such bounds cannot simply be applied to I.
+
+## Why two source collections are necessary
+
+| Question | Evidence in unified paper | Original archived component |
 |---|---|---|
-| Atomic systems | 55 qualified source groups | 48 qualified source groups |
-| Questions | 1,760 variants; 1,100 answerable | 1,536 variants per model; 960 answerable |
-| Models | Qwen3-4B, Phi-4-mini, SmolLM3-3B | Same three plus Qwen3-32B-AWQ |
-| Role in one study | Test progressively stricter evidence checks, accepted coverage, direct-versus-proof-aware accuracy | Test persistent errors across a different source collection, output formatting, error types, operation diagnosis, and token confidence |
-| Scoring contract | Permits one enclosing JSON code fence | Strict unfenced JSON, plus separately reported fence-normalization diagnostic |
+| Do weaker checks let physically invalid proofs through? | 55-system UMA evaluation: arithmetic, comparison-ID and full-definition checks on the same model selections. | Frozen original Phase 3 research; see `FINAL_REPORT.md` and `analysis/`. |
+| Does definition-aware verification reduce accepted coverage? | Rejections among 1,100 answerable questions and an explicit deterministic oracle baseline. | Frozen original Phase 3. |
+| Is correct verdict equal to valid scientific proof? | Original direct-answer versus proof-aware scores, with scientific insufficiency separately evaluated. | Frozen original Phase 3. |
+| Are movement and internal molecular deformation distinct? | Original aggregate findings and external 48-system coordinate audit. | Original physical definitions + external geometry audit. |
+| Do evidence selection failures persist across another atomic source? | 48 external OC20 source systems; four LLMs and distinct strict/fence-normalized scoring. | Phase 4 v1.7 external evaluation. |
+| Are these failures attributable to operation, evidence type, or presentation? | External error taxonomy, operation-only oracle diagnostic and matched presentation pairs. | Phase 4 v1.7 audits. |
+| Can high token confidence certify physical validity? | Exact-response confidence replay, eligible-case AUROC, and highly confident invalid proofs. | Phase 4 v1.7 confidence study. |
 
-The analyses answer one scientific question under different evaluation conditions. The numerical scores must not be pooled as if they were a direct replication of the same experiment.
+## Editorial unification versus new analysis
 
-## Unified findings
+- The paper's revised Figure 1 shows *two atomic source streams entering one physical-proof definition*, followed by study-specific analyses; it no longer presents chronological Phase 3/Phase 4 as independent projects.
+- Original 55-system and external 48-system scoring **must not** be pooled. The former permits one enclosing JSON fence in its protocol; the latter reports strict JSON and a separate diagnostic that removes an enclosing Markdown fence.
+- The external evaluation **did not repeat** the original comparison-ID versus full-definition ablation as a newly run matched experiment. Do not imply that the 81 additional Qwen invalid acceptances replicated on the external systems.
+- The external 48 structures were qualified under predefined rules. `val_ood_both` is an OC20 split label; it does not establish independence from LLM pretraining.
+- The deterministic oracle enumerates licensed proofs under complete benchmark rules. Operation-only repair is a retrospective upper-bound diagnostic, not an autonomous recovery tool.
+- No claim has been made that this study optimized catalysts, selected an improved material, or increased autonomous laboratory throughput.
 
-- The original comparison-ID check accepted 393 Qwen numerical responses; full-definition checking accepted 312 valid proofs, rejecting 81 additional invalid acceptances without losing the 312 licensed proofs.
-- On the external answerable questions, Qwen3-32B-AWQ produced 567/960 (59.1%) licensed proofs after removing only outer Markdown fences. Its **strict-JSON score remained 0**, because all original outputs were fenced.
-- No model gave a qualifying scientific abstention on the 576 insufficient-evidence external questions per model under the frozen output contract.
-- Among 601 Qwen3-32B selections with decision-token confidence above 0.99, 185 were scientifically invalid.
+## Primary publication source
 
-## What the publication revision changes
+The canonical unified submission-draft sources live in `publication/phase4_v1_7/manuscript/`. The manuscript now compiles `sections/results_discussion.tex` rather than separate chronological Results and Discussion/Phase 4 files. Legacy sections are retained as archival provenance and are **not** active manuscript inputs.
 
-The canonical scientific narrative proceeds through: physical measurement definitions; why identity-only checks fail; verdict-versus-proof reliability; persistence across source collections; sensitivity to presentation and operation; and limits of model confidence. One shared-framework Figure 1 now links the two collections. Original and external outcomes remain separately reported under their frozen rules.
+Use `publication/phase4_v1_7/publication_figures` for the 17 numerical figure plots and 1 integrated framework diagram. The data-derived figures are not recomputed from invented raw atom coordinates. Follow the existing audits for provenance limits.
 
-**This is an editorial publication unification, not a new inference run.** A matched external replication of the original comparison-ID/full-definition ablation has not been performed. The deterministic rule-only oracle solves the controlled benchmark under the specified evidence/rules; no superiority of an LLM hybrid is claimed.
+## Release checks and remaining work
 
-## Provenance and limits
-
-The original evidence archive, frozen workflows, original raw model outputs, and independent Phase 4 audits must remain unchanged. Geometry reproducibility does not establish catalytic activity, global adsorption minima, or unseen-by-LLM-pretraining conditions. Independent expert chemical review, some parent input archives, and main/SI authorship reconciliation remain outstanding.
-
-See the [55-system report](../FINAL_REPORT.md), [data card](../DATA_CARD.md), [Phase 4 audit status](../publication/phase4_v1_7/FREEZE_AUDIT_STATUS.md), and [external publication record](../publication/phase4_v1_7/README.md). The complete revised LaTeX files and shared Figure 1 are staged in the companion repository overlay archive, to be applied to this branch before it is merge-ready.
+After applying the unified manuscript update, run the original repository hash verification and original analysis before preparing a paper release. Also compile both LaTeX documents, verify figure placements and equation references, and confirm authorship between the main manuscript and Supplementary Information. Expert chemical review and missing parent artifacts in `FREEZE_AUDIT_STATUS.md` remain unresolved, independent of this editorial update.

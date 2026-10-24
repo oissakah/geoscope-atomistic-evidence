@@ -1,0 +1,141 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Checking the correct structure pair is not enough}
+\label{sec:primary}
+
+The primary controlled comparison asks whether a measurement from the correct structure pair is necessarily suitable evidence. Qwen submitted 393 numerical answers accepted by the comparison-ID check. Full-definition checking accepted only 312: all 312 had correct verdicts and licensed proof (Fig.~\ref{fig:checks}). The other 81 lacked a licensed proof. Among these 81, 42 also gave the wrong verdict; 39 gave the right verdict for the wrong scientific reason. Thus, checking only whether an answer says ``supported'' or ``contradicted'' would miss 39 invalid proofs. 
+
+All three checks used the same model choices. Figure~\ref{fig:checks} therefore shows the effect of checking more of the \emph{same} evidence, not a change in model reasoning. Full checking also tests the atom set, coordinate frame, alignment, periodic treatment, weights, and mathematical operation. The 81 rejected answers represent 4.60 percentage points of all 1,760 cases (95\% source-group interval 3.58--5.57). None of the 312 licensed answers was lost. . Within this defined task, run identity is necessary for using a record about the requested comparison, but is insufficient to establish that the selected quantity proves the claim. GeoScope further tests the physical meaning of that source.\cite{gao2023enabling,yu2026scicueval}
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\linewidth]{figure_02.pdf}
+  \caption{Qwen numerical acceptances under arithmetic-only, comparison-ID, and full-definition checks on identical evidence selections. Stacked segments distinguish correctly licensed answers, wrong verdicts, and correct verdicts with unlicensed proofs.}
+  \label{fig:checks}
+\end{figure}
+
+\subsection{Stricter checking lowers coverage without finding new proofs}
+\label{sec:coverage_results}
+
+Of the 81 additional Qwen rejections, 60 were on answerable questions and 21 were on questions with insufficient evidence. On the 1,100 answerable questions, accepted numerical answers dropped from 372 (33.82\%) to 312 (28.36\%). The decrease was 5.45 percentage points (95\% interval 4.09--6.91). This is not because the correct evidence disappeared. The checker simply rejected the chosen record and did not search for a better one.
+
+The same pattern appeared in the other two models (Supplementary Fig.~S2). Full-definition coverage was 11.00\% for Phi (121/1,100) and 15.27\% for SmolLM (168/1,100). Full checking prevented 245 and 273 additional invalid acceptances, respectively. These results show a tradeoff: a stricter checker can make accepted answers more trustworthy while leaving many questions unresolved. This is why we report valid numerical coverage as well as validity among accepted answers.
+
+A separate rule-only program found a permitted proof, or confirmed its absence, for all 1,760 cases. It used the complete structured evidence and the benchmark rules, so its success follows from the task design. It is a useful baseline, not evidence that a model-plus-checker system is better than deterministic checking.
+
+\subsection{The atom set and alignment change the meaning of displacement}
+\label{sec:physical_results}
+
+The original 55 systems show why these checks matter. Stored-frame adsorbate RMSD was more than ten times the aligned internal RMSD in 16 systems. The median ratio was 3.27 (Supplementary Fig.~S1). The first value keeps motion and rotation relative to the surface; the second removes whole-molecule movement and measures the change in shape. Alignment follows the Kabsch method.\cite{kabsch1978discussion}
+
+Both results have units of length, yet they describe different physical changes. A claim about shape cannot be proved by a measurement of surface-relative motion alone. The original coordinate table was unavailable for rebuilding the old scatterplot, so Supplementary Fig.~S1 uses only the frozen summary values. We do not infer a universal bound between these two RMSDs. A separate subset bound applies only when the shared-frame definitions match (Eq.~\ref{eq:bounds}). The UMA geometries have not been independently validated against new DFT calculations.\cite{wood2025uma}
+
+\subsection{A correct verdict often lacks a correct proof}
+\label{sec:direct_results}
+
+On all 1,760 variants, direct verdict accuracy was 38.81\% for Qwen, 32.56\% for Phi, and 20.45\% for SmolLM. When we also required a licensed proof, or a valid insufficiency response, accuracy fell to 17.39\%, 23.01\%, and 3.75\% (Fig.~\ref{fig:direct}). This gap shows that a correct final label does not guarantee correct evidence.
+
+Qwen gave numerical answers on 1,096 answerable questions, but only 255 had both the correct verdict and a licensed proof. It also gave numerical answers on 607 of 660 insufficient-evidence questions. Phi had 405 proof-aware successes, including 26 valid numerical answers and 379 valid insufficiency responses. Figure~\ref{fig:direct} compares these outcomes with the rule-only baseline. The direct-answer and evidence-selection prompts were separate model requests. Their score differences therefore do not measure the effect of adding a checker to the same answer.
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\linewidth]{figure_03.pdf}
+  \caption{Direct-verdict and proof-aware accuracy on the original 1,760 questions.}
+  \label{fig:direct}
+\end{figure}
+
+\subsection{Evidence presentation changes which proofs are found}
+\label{sec:presentation_results}
+
+In the original study, Qwen found licensed numerical answers for 33.09\% of structured questions but 23.64\% of report-form questions (Supplementary Fig.~S3). The paired difference was 9.45 percentage points (95\% interval 4.73--13.82). SmolLM showed a difference of 8.36 points; Phi showed $-0.18$ points, with an interval spanning zero.
+
+The two versions had the same scientific facts, but the report version also removed some repeated metric names. The difference may therefore reflect changes in naming cues, not just the use of prose. This finding matters for workflows that extract evidence from laboratory reports, but it does not prove how a model would perform on an arbitrary paper or instrument report. Studies of reasoning sensitivity provide related context.\cite{mirzadeh2025gsm}
+
+\subsection{Some mathematical operations are harder to select}
+\label{sec:family_results}
+
+Licensed-answer coverage also varied by task family (Supplementary Fig.~S4). Phi found no valid adsorbate upper-bound proof (0/220), and SmolLM found no valid mobile lower-bound proof (0/220). Qwen covered each answerable family, from 26.36\% for unit conversion to 34.55\% for mobile lower bounds.
+
+A bound needs more than arithmetic. The model must use the matching atom sets, measurement convention, and direction of inequality (Eq.~\ref{eq:bounds}). These results locate failures under the tested prompts; they do not reveal a model's internal reasoning or establish performance on other physical quantities.
+
+\subsection{The same errors appear in a separate OC20 collection}
+\label{sec:external_results}
+
+We collected 1,536 answers per model from 48 OC20 systems, for 6,144 answers in total. There were no missing or duplicate question IDs, and five SmolLM responses were truncated. An independent coordinate calculation reproduced all 144 stored-frame RMSDs and all 48 internal RMSDs. Figure~\ref{fig:external_geometry} compares stored-frame adsorbate motion with internal shape change for these systems. The values differ because fitting a molecule removes its whole-body motion. Reproducing the numbers checks the calculation, not whether every heuristic bond choice is chemically correct.\cite{kabsch1978discussion,chanussot2021open}
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.78\linewidth]{figure_04.pdf}
+  \caption{Stored-frame and aligned internal adsorbate RMSD for 48 OC20 systems.}
+  \label{fig:external_geometry}
+\end{figure}
+
+On the 960 answerable questions, Qwen3-32B gave 567 licensed proofs (59.1\%) after removing only outer Markdown code fences. Qwen3-4B gave 245 (25.5\%), a difference of 33.5 percentage points (95\% source-group interval 30.4--36.7). Figure~\ref{fig:external_model_comparison} shows the four models. Qwen3-32B had no strictly valid JSON outputs because every response was wrapped in a code fence. The higher fence-normalized score is therefore a diagnostic result, not its strict-format performance.
+
+\begin{table}[tbp]
+\centering\small
+\caption{Licensed proofs among 960 answerable OC20 questions per model.}
+\label{tab:external}
+\begin{tabular}{lrrr}
+\toprule
+Model & Strict JSON & Fence-normalized & Operation repair$^{a}$\\
+\midrule
+Qwen3-4B & 245 (25.5\%) & 245 (25.5\%) & 593 (61.8\%)\\
+Phi-4-mini & 82 (8.5\%) & 97 (10.1\%) & 284 (29.6\%)\\
+SmolLM3-3B & 1 (0.1\%) & 143 (14.9\%) & 260 (27.1\%)\\
+Qwen3-32B-AWQ & 0 (0.0\%) & 567 (59.1\%) & 723 (75.3\%)\\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\footnotesize $^{a}$An oracle-assisted diagnostic that changes only the operation; it is not model-only accuracy.
+\end{table}
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\linewidth]{figure_05.pdf}
+  \caption{Strict, fence-normalized, and oracle-assisted proof scores on external OC20 questions.}
+  \label{fig:external_model_comparison}
+\end{figure}
+
+Even after fence normalization, Qwen3-32B made 393 invalid selections. These included 156 cases with the right evidence but wrong operation, 131 with the wrong structure pair, and 106 with a wrong or inconclusive measurement (Fig.~\ref{fig:external_error_types}). An operation-only diagnostic raised its score to 723/960, but this method used the known proof rules to replace the operation. It did not make the model select better evidence. Errors about the physical definition remained. This is why numerical repair alone cannot ensure scientific correctness.
+
+Qwen3-32B gave 348 valid proofs on 480 structured questions, but 219 on 480 report-form questions. Both versions were correct for only 172 of the 480 paired cases. Figure~\ref{fig:external_error_types} shows the breakdown. The reports also removed repeated metric labels, so this is not a controlled test of prose alone. No model produced a correctly formatted and justified abstention on any of the 576 insufficient-evidence questions per model. A failed proof or rejected response was not counted as an abstention. These findings agree with the need to check scientific evidence separately from an answer's surface form.\cite{yu2026scicueval,zheng2026sciverifier}
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.88\linewidth]{figure_06.pdf}
+  \caption{Qwen3-32B proof and error types in structured and report-form OC20 questions.}
+  \label{fig:external_error_types}
+\end{figure}
+
+\subsection{High token likelihood does not prove scientific correctness}
+\label{sec:confidence_results}
+
+All 6,144 confidence replays reproduced the original answers exactly. The decision-token score ranked correct proofs above wrong ones with AUROC 0.724 for Qwen3-32B (95\% source-group interval 0.696--0.753), versus 0.636, 0.552, and 0.567 for the other three models (Fig.~\ref{fig:confidence_revised}A; Table~\ref{tab:confidence}). An AUROC of 0.5 is chance-level ranking; 1.0 means perfect ranking. Higher scores therefore gave useful information, especially for Qwen3-32B, but did not guarantee a licensed proof.
+
+\begin{table}[tbp]
+\centering\small
+\caption{Decision-token confidence and proof ranking on answerable OC20 questions.}
+\label{tab:confidence}
+\begin{tabular}{lrrr}
+\toprule
+Model & Score available & AUROC (95\% interval) & Licensed in top 10\%\\
+\midrule
+Qwen3-4B & 960/960 & 0.636 (0.589--0.682) & 68/96\\
+Phi-4-mini & 918/960 & 0.552 (0.484--0.626) & 18/92\\
+SmolLM3-3B & 735/960 & 0.567 (0.507--0.620) & 22/74\\
+Qwen3-32B-AWQ & 960/960 & 0.724 (0.696--0.753) & 90/96\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Qwen3-32B's 96 highest-scoring eligible answers included six wrong proofs. More strikingly, 185 of its 601 answers with a token score above 0.99 were wrong (Fig.~\ref{fig:confidence_revised}B). Token probability measures how strongly the model favors its chosen text; it is not the probability that the physical claim is true. Scores were missing for 42 answerable Phi responses and 225 SmolLM responses. We did not assign them replacement values (Supplementary Fig.~S10).
+
+The score was more informative for Qwen3-32B on structured questions (AUROC 0.749) than on reports (0.647; Supplementary Fig.~S9). These are comparisons within one examined dataset, not a new calibration test. Confidence was scored on answerable questions and cannot show whether a model knows that evidence is missing. This limits its present use in self-driving laboratories, where a confident but unsupported conclusion could guide the next experiment.
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\linewidth]{figure_07.pdf}
+  \caption{(A) Proof-ranking AUROC. (B) Invalid proofs with decision-token scores above 0.99.}
+  \label{fig:confidence_revised}
+\end{figure}

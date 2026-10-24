@@ -5,16 +5,26 @@
 \usepackage{microtype}
 \usepackage[font=small,labelfont=normal]{caption}
 \usepackage[section]{placeins}
+\usepackage{authblk}
 \usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=12]{biblatex}
 \addbibresource{references.bib}
 \usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
-\title{When Scientific Measurements Mislead Language Models: Definition-Aware Verification of Atomistic Evidence}
-\author{Obed Issakah}
+% Authors and affiliations (confirm with all authors before submission).
+\title{When Scientific Measurements Mislead Language Models:\\
+Definition-Aware Verification of Atomistic Evidence}
+\author[1]{Obed Issakah}
+\author[1]{Janghoon Ock\thanks{Corresponding author: \texttt{jock2@unl.edu}}}
+\affil[1]{Department of Chemical and Biomolecular Engineering, University of Nebraska--Lincoln, Lincoln, NE 68588, USA}
+\renewcommand\Authfont{\small}
+\renewcommand\Affilfont{\small}
+\setlength{\affilsep}{0.5em}
 \date{}
+
 \graphicspath{{figures/}}
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
+\emergencystretch=2em
 \setlength{\textfloatsep}{14pt}
 \renewcommand{\topfraction}{0.9}
 \renewcommand{\bottomfraction}{0.8}
@@ -26,13 +36,10 @@
 \input{sections/abstract}
 \input{sections/introduction}
 \input{sections/methods}
-\input{sections/phase4_methods}
-\input{sections/results}
-\input{sections/phase4_results}
-\input{sections/discussion}
-\input{sections/phase4_discussion}
+\input{sections/results_discussion}
 \input{sections/conclusion}
+\input{sections/submission_declarations}
 \section*{Supplementary Information}
-A separately compiled Supplementary Information document provides the extended experiment protocols, original-study subgroup summaries, external-source audit, additional model comparisons, confidence analyses, reproducibility notes, and Figures S1--S11. Numerical results in the supplementary figures can be regenerated from the accompanying \texttt{publication\_figures} CSV and Python files. Independent chemical expert review remains outstanding.
+Supporting Information accompanies this article and provides additional details on atomic-displacement definitions and shared proof criteria (Section~S1). Source-specific analyses include the UMA-relaxed collection (Section~S2; Supplementary Figures~S1--S4) and the OC20 trajectory collection (Section~S3; Supplementary Figures~S5--S7). Confidence and cross-collection comparisons are documented in Section~S4 (Supplementary Figures~S8--S11), with limitations and reproducibility details in Section~S5.
 \printbibliography
 \end{document}
