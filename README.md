@@ -1,91 +1,64 @@
-# GeoScope: checking the meaning of atomistic measurements
+# GeoScope — definition-aware verification of atomistic evidence
 
-GeoScope studies whether language models select the right measurement and mathematical operation when interpreting atomic simulations. Two values can share the same units while describing different things: motion of an adsorbed molecule, changes in its internal shape, or displacement averaged over a larger atom set.
+**One scientific question, two complementary atomic source collections:** do language models select measurements and mathematical operations that physically justify claims about atomistic simulations?
 
-The project combines OC20-Dense initial structures, FAIRchem UMA relaxations, coordinate-derived evidence, and a controlled evaluation of three language models. It separates a correct comparison ID from a correct physical definition, and measures how validation changes the reliability and coverage of accepted answers.
+Scientific AI can identify the correct structure pair and even produce the correct answer while using an invalid measurement. GeoScope evaluates *licensed scientific proofs*: a proposed claim is supported only when its evidence identifier, compared endpoints, atom set, coordinate frame, alignment, periodic treatment, weighting, and mathematical operation are compatible with the claim. GeoScope is a benchmark and verifier for atomistic evidence; it is **not** a deployed autonomous catalyst-discovery system.
 
-## Main result
+## Study design
 
-Checking the comparison ID alone still permits invalid uses of a scientific number. Full-definition checking rejects additional errors involving atom selection, frame, alignment, periodic handling, weighting or the selected mathematical relation.
-
-| Model | Full-check valid numerical answers / 1,100 answerable cases | Additional bad acceptances rejected beyond comparison-ID checking |
-|---|---:|---:|
-| Qwen3-4B-Instruct-2507 | 312 (28.36%) | 81 |
-| Phi-4-mini-instruct | 121 (11.00%) | 245 |
-| SmolLM3-3B | 168 (15.27%) | 273 |
-
-The two checks use **identical raw model selections**. Full checking retains the same correct answers and rejects more invalid ones; it does not find replacement evidence for rejected cases. Accepted-answer coverage remains low. For Qwen, answerable-case acceptance falls from 33.82% to 28.36%.
-
-![Qwen numerical acceptances, distinguishing valid proofs from incorrect verdicts and invalid proofs](figures/output/01_plot1_qwen_acceptance.svg)
-
-The deterministic public-payload oracle solves **all 1,760 cases**. The full checker's perfect correctness among accepted answers follows the declared proof rules. These results support an evidence-selection diagnostic and a measured verification-versus-coverage tradeoff; they do not establish a new reasoning algorithm or 100% overall model accuracy.
-
-Read the [final report](FINAL_REPORT.md) for exact counts, source-group intervals, failure analysis and interpretation.
-
-## Study at a glance
-
-- **20 development source groups** were used to develop the task and scoring protocol.
-- **60 new source groups** were selected before UMA outcomes were inspected. Fifty-eight converged; **55 qualified** under the frozen geometry criteria. Two nonconverged systems and three changed molecular graphs remain in the original denominator, with no replacements.
-- The final benchmark contains **880 base cases in two presentations: 1,760 variants** from the 55 qualified groups. There are 550 supported, 550 contradicted and 660 insufficient-evidence labels.
-- Each model made a direct-answer request and a separate evidence/operation-selection request for every variant: **10,560 recorded first attempts** in total.
-- **261 SmolLM responses reached the fixed output-token cap** and remain scored failures. There are no missing or duplicate requests. The original automated `PARTIAL_FINAL_RESULTS` status is preserved; the reviewed experiment includes all planned first attempts.
-
-Cases cover direct measurements, unit conversion, valid subset bounds, unresolved bounds, independent anchor measurements and evidence from another comparison. Definitions and permitted mathematical relations are supplied. Scientific insufficiency and operational rejection are scored separately. All valid single-measurement proofs are accepted.
-
-The statistical unit is the source group. The 1,760 variants are correlated examples, not independent physical experiments. See the [data card](DATA_CARD.md) for construction and applicability limits.
-
-## Reproduce the analysis on a CPU
-
-Python 3.12 and its standard library are sufficient. From the repository root:
-
-```bash
-python reproduce_analysis.py
-```
-
-The script verifies the preserved final evidence ZIP and its 69 member checksums, recomputes every evaluation field from raw outputs, and refuses a mismatch. It writes reports to `recomputed/`. No GPU, model download or extra Python package is required, and no archived program is executed.
-
-The original cases, gold proofs, raw model text, settings, manifests and logs are inside [`evidence/final_results_original.zip`](evidence/final_results_original.zip). Reviewed tables and examples are in [`analysis/`](analysis/). The [reproducibility guide](docs/REPRODUCIBILITY.md) explains what can be reproduced directly and what requires the original compute artifacts.
-
-## Three-phase workflow
-
-| Phase | Work completed | Inspectable source |
+| Shared framework | UMA-relaxed OC20-Dense collection | OC20 stored DFT-trajectory collection |
 |---|---|---|
-| 1: establish the evidence | Select OC20-Dense inputs, relax with UMA, review convergence and geometry, and correct the initial case constructor. | [Initial workflow](workflows/geom_scope_phase1_uma/), [bounded continuation](workflows/phase1_continue/) |
-| 2: develop the evaluation | Compare three models, separate formatting from evidence errors, and refine selection/calculation controls on the development groups. | [Pilot](workflows/phase2_pilot/), [refinement](workflows/phase2_refine/) |
-| 3: freeze and evaluate new groups | Qualify a disjoint source pool, freeze cases and scoring, record every planned model attempt, then reproduce and review the final results. | [Source qualification](workflows/phase3_prepare/), [final evaluation](workflows/phase3_final/) |
+| Physical evidence | Mobile and adsorbate stored-frame RMSD, adsorbate rigid-aligned internal RMSD, admissible subset bounds | The same measurement types and proof rules |
+| Atomic sources | 55 qualified groups | 48 qualified groups |
+| Claims | 1,760 variants (1,100 answerable; 660 insufficient evidence) | 1,536 variants per model (960 answerable; 576 insufficient evidence) |
+| Models | Qwen3-4B, Phi-4-mini, SmolLM3-3B | The same three plus Qwen3-32B-AWQ |
+| Main analysis | Arithmetic-only vs. comparison-ID vs. full-definition checking; verdict/proof and coverage | Strict vs. fence-normalized scoring; error types; oracle-assisted operation repair; decision-token confidence |
 
-The original delivery ZIPs are preserved in [`runners/`](runners/). Their extracted source is visible under `workflows/`; the original frozen workflow files have not been rewritten for this repository. Reanalysis uses the small trusted scorer in [`lib/finalstudy/`](lib/finalstudy/).
+Both source collections use the same conceptual evidence/proof framework, but their **output-format contracts and central comparisons differ**. Results are reported separately, rather than being pooled as though the evaluations were identical.
 
-The final workflow includes **57 CPU unit tests**. Run them from the repository root without downloading models:
+## Core findings
+
+- In the 55-system collection, full-definition checking retained **312 valid Qwen numerical proofs** and rejected **81 additional invalid acceptances** left by a comparison-ID-only check, including 39 correct verdicts justified by invalid evidence. Valid accepted coverage on 1,100 answerable questions was 28.36% for Qwen.
+- On the independent-source OC20 trajectory collection, Qwen3-32B-AWQ returned **567/960 (59.1%)** valid proofs after *outer Markdown-fence normalization*. Its original strict-JSON score was **0/960** because its responses were fenced. Fence normalization is a formatting diagnostic, not scientific repair.
+- All four external models had **0/576** qualifying scientific abstentions under the frozen output contract. Qwen3-32B-AWQ's decision-token confidence AUROC was **0.724**; **185/601** responses above a 0.99 decision-token score were scientifically invalid.
+- Deterministic proof enumeration resolves all benchmark questions from complete structured public evidence under the predefined rules; this work **does not** show that an LLM/verifier hybrid outperforms deterministic-only inference.
+
+## Start here
+
+- **[Unified manuscript](publication/phase4_v1_7/manuscript/)** — primary publication draft and Supplementary Information; six integrated Results and Discussion subsections and a shared-framework Figure 1
+- [One-study design and mapping](docs/UNIFIED_STUDY.md) — how the two source collections and figures support the same research question
+- [Publication package guide](publication/phase4_v1_7/README.md) — manuscript, audits, model outputs, figure sources, reproducibility status
+- [Data card](DATA_CARD.md) and [original-study final report](FINAL_REPORT.md) — frozen 55-system methods, source qualification, outcomes, and limitations
+- [External freeze and audit status](publication/phase4_v1_7/FREEZE_AUDIT_STATUS.md) — external verification and unresolved expert-review requirements
+
+## Reproduce the original 55-system analysis
+
+Using Python 3.12 and the standard library, from the repository root:
 
 ```bash
+python verify_repository.py
+python reproduce_analysis.py
 PYTHONPATH=workflows/phase3_final/src python -m unittest discover -s workflows/phase3_final/tests -v
 ```
 
-The tests use synthetic fixtures for software verification. They are separate from the recorded model results.
+The raw original model selections and exact freeze records remain in `evidence/final_results_original.zip`. This archived evidence is not rewritten by the publication update.
 
-## Figures and research materials
+## Reproduce external publication figures and build the manuscript
 
-- [Figure 1: Qwen acceptance and proof validity](figures/output/01_plot1_qwen_acceptance.svg)
-- [Figure 2: answerable-case coverage across models](figures/output/02_plot2_answerable_coverage.svg)
-- [Figure 3: direct-answer scientific accuracy and the oracle](figures/output/03_plot3_direct_accuracy.svg)
-- [Figure scripts and regeneration instructions](figures/README.md)
-- [Independent audits](audits/)
-- [Publication plan and accurate CV wording](PUBLICATION_AND_CV.md)
+```bash
+python -m pip install numpy matplotlib reportlab
+cd publication/phase4_v1_7/publication_figures
+python scripts/verify_inputs.py
+python scripts/build_all.py
+cd ../manuscript
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error supplementary.tex
+```
 
-## Scope and reuse
+`latexmk` requires a LaTeX distribution with `biber`. The canonical unified overview is regenerated using `manuscript/figures/make_figure_01.py`; the figure plotting pipeline calls this script for Figure 1, while the other figures retain their original numerical CSV inputs. Read [manuscript build notes](publication/phase4_v1_7/manuscript/README_BUILD.md).
 
-This is a controlled same-domain evaluation of three compact instruction models. Disjoint source IDs do not establish new chemical families or independence from model training. UMA convergence and geometric consistency do not establish DFT accuracy, chemisorption, catalyst quality or a global minimum. The final groups have now been inspected; subsequent tuning on them would make them development data.
+## Scope, provenance, and status
 
-No model weights or environments are included. Original structural trajectories and development result archives remain separately hashed parent artifacts; they are required for the complete atomistic audit trail. See [sources, acknowledgments and upstream terms](THIRD_PARTY_NOTES.md). A blanket license for the project's original code has not been selected.
+The original phase-level code, frozen model outputs, source audits, plots and scientific datasets remain archived and traceable. The unified manuscript is an **editorial reorganization of frozen results**, not a new evaluation or claim of external checker-ablation replication. No evidence establishes that the external OC20 systems were absent from LLM pretraining. UMA relaxation and DFT trajectory geometry alone do not establish a globally stable adsorbate or catalytic activity. The complete structural source archives and expert chemical review retain the limitations documented in the freeze reports.
 
-
----
-
-## Phase 4 v1.7 — Four-model external validation and confidence audit (publication snapshot)
-
-The original Phase 3 controlled benchmark remains unchanged. A separate [Phase 4 v1.7 publication snapshot](publication/phase4_v1_7/README.md) adds 48 OC20 external source systems, 1,536 paired scientific-evidence questions, four open-weight model evaluations (6,144 responses), and a matching token-confidence study. The extended publication includes a main LaTeX manuscript, Supplementary Information, and [reproducible figures and per-figure CSV inputs](publication/phase4_v1_7/publication_figures/README.md).
-
-On the 960 answerable OC20 questions, format-normalized scientific-proof validity was 245/960 (Qwen3-4B), 97/960 (Phi-4-mini), 143/960 (SmolLM3-3B), and 567/960 (Qwen3-32B-AWQ). Strict-format scoring and oracle-assisted repair are reported separately. Decision-confidence AUROC was 0.636, 0.552, 0.567, and 0.724, respectively, on eligible answerable cases. Even the largest model could be highly confident in scientifically invalid selections.
-
-The deterministic verifier can enumerate all licensed proofs on these structured benchmark packets, so this study **does not** establish that a hybrid LLM-verifier outperforms deterministic-only inference. External expert chemical review is not yet complete; the manuscript is a draft, not a submission-ready claim. See the [freeze audit status](publication/phase4_v1_7/FREEZE_AUDIT_STATUS.md).
+**Publication status:** working draft; independent human chemical review and authorship reconciliation are outstanding. See [third-party source notes](THIRD_PARTY_NOTES.md) for reuse considerations. The project has not selected a blanket license for its original code.

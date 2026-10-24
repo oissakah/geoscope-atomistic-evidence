@@ -1,0 +1,155 @@
+% Integrated Results and Discussion: one proof-evaluation framework, two atomistic source collections.
+% Figures/tables use captionof to retain their exact text insertion positions.
+% Original frozen counts have not been recomputed. No new model inferences are claimed.
+\section{Results and Discussion}
+\label{sec:results}
+\label{sec:discussion}
+
+\subsection{Physical definitions reveal unsupported numerical proofs}
+\label{sec:primary}
+\label{sec:coverage_results}
+
+The central question in GeoScope is whether an LLM's selected measurement and operation justify a claim about an atomic structure. The two source collections share the same definition of a licensed proof: the compared endpoints, measured atoms, displacement frame, alignment, periodic treatment, weighting, and mathematical relation must all be compatible with the claim (Fig.~\ref{fig:workflow}). We first tested why a numerical or source-identity check alone does not enforce this requirement. For Qwen on the 55-system UMA collection, checking only the comparison ID accepted 393 numerical responses, whereas full-definition checking accepted 312 (Fig.~\ref{fig:checks}). The latter rejected 81 additional invalid selections without excluding any of the 312 licensed proofs. Among these 81 selections, 42 had the wrong verdict and 39 had the right verdict for an invalid reason. The additional rejections were 4.60 percentage points of all 1,760 questions (95\% source-group interval: 3.58--5.57).
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figure_02.pdf}
+\captionof{figure}{Qwen numerical answers accepted by three checks on the same evidence selections. Colors distinguish licensed proofs, wrong verdicts, and unlicensed proofs with correct verdicts.}
+\label{fig:checks}
+\end{minipage}
+\end{center}
+
+The checks operated on exactly the same model selections; the stricter check did not generate new evidence or change an answer. The rejected cases show that a real measurement associated with the correct structures can describe the wrong physical quantity. The gain in validity also reduced accepted coverage: among the 1,100 answerable questions, Qwen's accepted numerical responses decreased from 372 (33.82\%) under comparison-ID checking to 312 (28.36\%) under full-definition checking, a 5.45-percentage-point reduction (95\% source-group interval: 4.09--6.91). Of the 81 additional rejections, 60 concerned answerable claims and 21 concerned insufficient-evidence claims. The full-definition coverage of answerable cases was 121/1,100 (11.00\%) for Phi and 168/1,100 (15.27\%) for SmolLM; the stricter check rejected 245 and 273 additional invalid selections from those models, respectively (Supplementary Fig.~S2).
+
+A failed selection establishes that a proposed proof is unsupported, not that no valid proof exists. The checker did not search the remaining evidence after rejection. Under the benchmark's complete public measurements and explicit rules, a separate deterministic enumerator resolved all 1,760 claims, including the insufficient-evidence cases. This illustrates the verification--coverage tradeoff under \emph{one-shot model selection}; it does not establish that LLM-assisted verification exceeds a deterministic-only baseline. Related citation-grounding work distinguishes generated claims from the evidence actually supporting them; GeoScope tests this requirement for physical rather than solely textual evidence.\cite{gao2023enabling,yu2026scicueval}
+
+\subsection{Correct verdicts do not establish valid scientific proofs}
+\label{sec:direct_results}
+
+The same issue appears when the final verdict is evaluated separately from its scientific justification. Across the original 1,760 questions, direct-verdict accuracies were 38.81\%, 32.56\%, and 20.45\% for Qwen, Phi, and SmolLM (Fig.~\ref{fig:direct}). When the response also required a licensed numerical proof or a justified insufficient-evidence verdict, the corresponding proof-aware accuracies were 17.39\%, 23.01\%, and 3.75\%. Thus, the ranking of the models changed once evidential validity was considered.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figure_03.pdf}
+\captionof{figure}{Verdict-only and proof-aware accuracy across 1,760 original-study questions. The rule-only oracle is shown as a benchmark reference.}
+\label{fig:direct}
+\end{minipage}
+\end{center}
+
+For Qwen, 1,096 answerable questions received numerical answers, but only 255 paired a correct verdict with a licensed proof. The same model supplied numerical answers on 607 of the 660 insufficient-evidence questions. Phi's 405 proof-aware successes included 26 valid numerical proofs and 379 justified insufficiency responses. Its higher combined score therefore reflects stronger performance on this specific insufficiency component, not superior coverage of numerical scientific proofs. The deterministic enumerator's perfect score is a property of the fully specified evidence-and-rule packet, not proof of general scientific reasoning.
+
+A correct verdict reached through an unsuitable displacement metric may occur by coincidence. For example, a molecule can move on a surface without changing its internal shape; a conclusion about deformation is not justified by whole-molecule movement alone. This matters to autonomous simulation interpretation because an apparently correct screening decision does not demonstrate that its measurement-selection procedure will work on another candidate. Scientific problem-solving studies and autonomous chemistry demonstrations motivate this distinction between plausible outputs and decisions grounded in evidence.\cite{wang2024scibench,boiko2023autonomous} Because the direct-verdict and evidence-selection tasks used separate requests, the difference between their scores is not a controlled estimate of the effect of verification on the same answer.
+
+\subsection{Atomic movement and internal deformation are distinct physical signals}
+\label{sec:physical_results}
+
+The physical distinction was measurable in both source collections. In 16 of the 55 UMA-relaxed systems, the stored-frame adsorbate RMSD, $A$, exceeded the rigid-aligned internal RMSD, $I$, by more than a factor of ten; their median ratio was 3.27 (Supplementary Fig.~S1). The 48 OC20 trajectory systems provide a separate coordinate-based check of the same definitions (Fig.~\ref{fig:external_geometry}). Most points lie below the equality line, indicating that motion measured in the stored frame was generally greater than the shape change left after alignment.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\includegraphics[width=0.78\linewidth]{figure_04.pdf}
+\captionof{figure}{Stored-frame adsorbate RMSD versus aligned internal RMSD for 48 OC20 systems. The dashed line marks equal values.}
+\label{fig:external_geometry}
+\end{minipage}
+\end{center}
+
+Both quantities have units of angstroms but answer different questions. Stored-frame $A$ includes translation and rotation relative to the surface, whereas $I$ removes proper rigid-body translation and rotation and retains internal geometric change.\cite{kabsch1978discussion} For example, values $A=0.80$~\AA{} and $I=0.05$~\AA{} would give a ratio of 16: substantial stored-frame displacement with comparatively small deformation. These are illustrative values, not an additional simulated system. The subset bound in Eq.~\ref{eq:bounds} connects the equally weighted shared-frame quantities $M$ and $A$; it does not give a bound between $I$ and $A$. Large displacement alone does not establish diffusion, adsorption-site change, bond breaking, or catalyst performance.
+
+An independent coordinate implementation reproduced all 144 stored-frame RMSD values and 48 aligned internal RMSD values in the external collection. This supports the numerical geometry calculations, not the chemical correctness of every stored structure. Both implementations used a heuristic bond rule when unwrapping adsorbates across periodic boundaries. The original 55-system coordinate table was unavailable for reconstructing the earlier scatterplot, so Supplementary Fig.~S1 retains only the archived summary. Adsorption-screening studies underscore why geometry must be interpreted alongside appropriate energetic and chemical evidence.\cite{lan2023adsorbml,chanussot2021open}
+
+\subsection{Scientific proof failures persist across atomistic source collections}
+\label{sec:external_results}
+
+Having established the physical definitions and their consequences for proof validity, we tested the same evidence-selection requirement using a distinct source collection: 48 OC20 stored DFT relaxation trajectories rather than the UMA-relaxed source endpoints. Four models answered 1,536 questions each, yielding 6,144 responses; 960 questions per model had a supported or contradicted verdict and were therefore answerable. Under the diagnostic that removes only outer Markdown code fences, Qwen3-32B produced 567 valid proofs (59.1\%) and Qwen3-4B produced 245 (25.5\%), a difference of 33.5 percentage points (95\% source-group interval: 30.4--36.7). Figure~\ref{fig:external_model_comparison} and Table~\ref{tab:external} distinguish scientific proof validity from output-format compliance and oracle-assisted operation repair.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figure_05.pdf}
+\captionof{figure}{Valid proofs among 960 answerable external questions per model. Bars show strict JSON, fence-normalized, and oracle-assisted operation-repair scores.}
+\label{fig:external_model_comparison}
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering\small
+\captionof{table}{Valid external proofs by scoring rule (960 answerable questions per model).}
+\label{tab:external}
+\begin{tabular}{lrrr}
+\toprule
+Model & Strict JSON & Fence-normalized & Operation repair$^{a}$\\
+\midrule
+Qwen3-4B & 245 (25.5\%) & 245 (25.5\%) & 593 (61.8\%)\\
+Phi-4-mini & 82 (8.5\%) & 97 (10.1\%) & 284 (29.6\%)\\
+SmolLM3-3B & 1 (0.1\%) & 143 (14.9\%) & 260 (27.1\%)\\
+Qwen3-32B-AWQ & 0 (0.0\%) & 567 (59.1\%) & 723 (75.3\%)\\
+\bottomrule
+\end{tabular}
+\par\vspace{3pt}\footnotesize $^{a}$Oracle-assisted operation replacement for the model's selected evidence; not independent model accuracy.
+\end{minipage}
+\end{center}
+
+All Qwen3-32B outputs included Markdown code fences and therefore failed the frozen strict-JSON requirement; removing only those enclosing fences did not change their scientific selections. Its zero strict-format score must not be interpreted as zero underlying scientific validity. Conversely, the 567 fence-normalized valid proofs still leave 393 invalid selections among 960 answerable cases. The two Qwen configurations differ in checkpoint and quantization as well as parameter count; the observed difference is not a controlled scaling effect. All 6,144 external responses were collected without missing or duplicate question IDs, and five SmolLM responses reached the output limit.
+
+The two collections are complementary evaluations of \emph{one physical-proof criterion}, not identical replications of every scoring contrast. The UMA collection primarily tested arithmetic-only, comparison-ID, and full-definition checks on the same model selections, and allowed one surrounding code fence. The OC20 trajectory collection primarily tested strict JSON, fence normalization, error attribution, and operation repair. A new comparison-ID-versus-full-definition result was not computed for the external responses. Further, the 48 OC20 sources were a qualified sample and may overlap unknown language-model pretraining sources. The result demonstrates persistence of proof errors on a separate atomistic source collection, not guaranteed generalization to unseen chemical families.
+
+\subsection{Evidence presentation, operation choice, and missing evidence constrain validity}
+\label{sec:presentation_results}
+\label{sec:family_results}
+
+Across both source collections, the difficulty was not simply obtaining a number: models had to identify its definition and apply a permitted operation. In the UMA collection, Qwen's licensed numerical-proof coverage was 33.09\% for structured records and 23.64\% for written reports, a paired difference of 9.45 percentage points (95\% source-group interval: 4.73--13.82; Supplementary Fig.~S3). SmolLM showed an 8.36-point decrease, whereas Phi differed by $-0.18$ points with an interval including zero. Written reports also removed repeated measurement names, so these differences cannot be ascribed to prose formatting alone. Operation-specific failures included zero licensed Phi adsorbate upper-bound proofs (0/220) and zero SmolLM mobile lower-bound proofs (0/220). Qwen coverage ranged from 26.36\% for unit conversion to 34.55\% for mobile lower bounds (Supplementary Fig.~S4).
+
+The OC20 collection revealed analogous problems. Among the 393 invalid fence-normalized Qwen3-32B selections, 156 used the right evidence with the wrong operation, 131 used the wrong structure pair, and 106 selected unsuitable or inconclusive evidence. Qwen3-32B produced 348/480 valid proofs from structured records and 219/480 from written reports; both presentations produced valid proofs in only 172/480 paired cases (Fig.~\ref{fig:external_error_types}). The same confounding by removed repeated measurement names applies. Supplying a permitted alternative operation \emph{for the model's selected evidence identifier} increased valid proofs from 567 to 723/960 (75.3\%). This oracle-assisted repair is a diagnostic and cannot be credited to independent model reasoning.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\includegraphics[width=0.88\linewidth]{figure_06.pdf}
+\captionof{figure}{Qwen3-32B valid proofs and error types for structured and written-report evidence. Each presentation contains 480 answerable questions.}
+\label{fig:external_error_types}
+\end{minipage}
+\end{center}
+
+The operation requirement has a direct physical interpretation. For a shared-frame adsorbate RMSD $A=0.20$~\AA, three adsorbate atoms, and 12 mobile atoms, Eq.~\ref{eq:bounds} gives $M\geq0.20\sqrt{3/12}=0.10$~\AA. Reversing that inequality turns a valid lower bound into an invalid upper bound. These numbers are illustrative and do not define a catalytic screening threshold. Research on structured scientific information and mathematical prompting provides relevant context for the observed representation and operation sensitivities.\cite{dagdelen2024structured,mirzadeh2025gsm}
+
+Missing evidence proved especially difficult. On each model's 576 external insufficient-evidence questions, no response met the joint requirement for a correctly formatted and scientifically justified abstention. A rejected proof does not establish that all available evidence is inadequate: the model may simply have overlooked a suitable record. Conversely, a packet may genuinely lack a measurement needed for a conclusion. The distinction motivates a future workflow that searches alternate records, verifies the permitted operation, and requests more information or explicitly abstains when a complete packet remains insufficient. Such recovery or decision support has not been tested here. Its relevance to tool-using scientific agents does not constitute evidence of improved autonomous catalyst outcomes.\cite{bran2024augmenting,chen2026phyver}
+
+\subsection{Token confidence cannot substitute for scientific verification}
+\label{sec:confidence_results}
+
+Finally, we asked whether confidence in the selected evidence and operation could identify invalid proofs. All 6,144 external answers were reproduced exactly in a token-probability replay. Decision-token confidence, the geometric mean of the likelihoods of the selected identifier and operation tokens, yielded an area under the receiver operating characteristic curve (AUROC) of 0.724 for Qwen3-32B (95\% source-group interval: 0.696--0.753; Fig.~\ref{fig:confidence_revised}A). The values for Qwen3-4B, Phi, and SmolLM were 0.636, 0.552, and 0.567, respectively (Table~\ref{tab:confidence}). AUROC measures ranking of valid above invalid proofs, not the probability that an individual claim is true.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figure_07.pdf}
+\captionof{figure}{Decision-token confidence on external answerable questions. (A) Valid-proof ranking measured by AUROC. (B) Wrong-proof rates for scores above 0.99.}
+\label{fig:confidence_revised}
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering\small
+\captionof{table}{Decision-token confidence on answerable external questions.}
+\label{tab:confidence}
+\begin{tabular}{lrrr}
+\toprule
+Model & Scores available & AUROC (95\% interval) & Valid in top 10\%\\
+\midrule
+Qwen3-4B & 960/960 & 0.636 (0.589--0.682) & 68/96\\
+Phi-4-mini & 918/960 & 0.552 (0.484--0.626) & 18/92\\
+SmolLM3-3B & 735/960 & 0.567 (0.507--0.620) & 22/74\\
+Qwen3-32B-AWQ & 960/960 & 0.724 (0.696--0.753) & 90/96\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{center}
+
+High-confidence errors remained substantial. Six of Qwen3-32B's 96 highest-scoring eligible proofs were invalid. Among its 601 selections with a decision-token confidence above 0.99, 185 (30.8\%) were invalid (Fig.~\ref{fig:confidence_revised}B). A model may be nearly certain of its chosen tokens while the chosen metric does not support the physical claim. This distinction between text-token likelihood and scientific support is consistent with broader research on uncertainty in language generation.\cite{farquhar2024semantic,zheng2026sciverifier}
+
+Decision-token scores were missing for 42 answerable Phi responses and 225 answerable SmolLM responses; they were not imputed (Supplementary Fig.~S10). For Qwen3-32B, confidence ranked valid proofs more effectively for structured evidence (AUROC 0.749) than written reports (0.647; Supplementary Fig.~S9). The confidence analysis was retrospective and restricted to eligible answerable cases, so it does not establish a transferable scientific-confidence threshold or a reliable abstention policy. In combination, the verification, presentation, source-transfer, and confidence results locate a common limitation: a convincing or confidently expressed output is not necessarily a licensed physical proof. That limitation matters for AI agents that interpret simulations before proposing new calculations, but actual gains in autonomous materials discovery remain to be demonstrated.

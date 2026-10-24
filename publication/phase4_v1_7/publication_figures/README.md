@@ -1,54 +1,33 @@
-# GeoScope publication_figures — frozen Phase 4 v1.7
+# GeoScope publication figures — unified manuscript
 
-This independent, self-contained figure folder regenerates **all 7 main manuscript figures and all 11 Supplementary Information figures**, using the paired per-figure CSVs. It does not alter scientific experiments or model results.
+The canonical publication has **one shared physical-proof framework** tested on two complementary atomic source collections. Figure 1 is a conceptual diagram of that framework and is regenerated from the manuscript's editable source script; the remaining 17 plots have frozen per-figure numerical CSV inputs.
 
-## Quick start
+## Build all figures
 
 ```bash
-python -m pip install numpy matplotlib
+python -m pip install numpy matplotlib reportlab
+python scripts/verify_inputs.py
 python scripts/build_all.py
 ```
 
-Or generate any figure individually (for example `python scripts/figure_05.py`). Each `figure_XX.py` script reads exactly `data/figure_XX.csv` via `scripts/plot_common.py`. Output goes to `main/` or `supplementary/` in PDF, SVG and PNG formats. The scripts work without access to private GitHub, original GPU environments, or OC20 downloads.
+Figure 1: `../manuscript/figures/make_figure_01.py` generates the canonical vector PDF. The build script copies it to `main/figure_01.pdf`. The optional SVG view is created when `pdftocairo` is present; a prebuilt SVG is committed for browsing. Figure 1's CSV is historical protocol annotation, not a numerical data source. Do **not** use the old four-panel chronological diagram for the unified manuscript.
 
-## Main figures
+Figures 2–7 and S1–S11: `scripts/plot_common.py` reads the frozen CSVs under `data/`; the original numerical values and data sources are unchanged.
 
-| Figure | Content | Paired source |
-|---|---|---|
-| 1 | Study workflow (original controlled benchmark, OC20 external study, token confidence, synthesis) | `data/figure_01.csv` (diagram labels based on frozen study protocol) |
-| 2 | Original three-checker numerical proof acceptances | `data/figure_02.csv` (published frozen checker summary) |
-| 3 | Original direct verdict and proof-aware accuracy | `data/figure_03.csv` (published frozen original summary) |
-| 4 | External OC20 stored-frame vs aligned internal RMSD of 48 real source pairs | `data/figure_04.csv` (v1.5 OC20 source-gate audit) |
-| 5 | Four-model external strict, fence-normalized and operation-repaired proof scores | `data/figure_05.csv` (v1.6 case-level audit) |
-| 6 | Qwen3-32B external error taxonomy by evidence presentation | `data/figure_06.csv` (v1.6 case-level audit) |
-| 7 | Confidence AUROC and high-token-likelihood wrong answers | `data/figure_07.csv` (v1.7 confidence summary) |
+## Figure map
 
-## Supplementary figures
+| Figure | Content |
+|---|---|
+| 1 | Shared physical-evidence definitions and licensed-proof framework across both source collections |
+| 2 | Original 55-system same-selection comparison: arithmetic, structure identity and full-definition checks |
+| 3 | Original verdict-only versus proof-aware evaluation |
+| 4 | External 48-system stored-frame versus internal aligned adsorbate RMSD |
+| 5 | External four-model strict, fence-normalized and diagnostic operation-repair outcomes |
+| 6 | External Qwen3-32B error types by presentation |
+| 7 | Decision-token confidence AUROC and highly confident invalid proof rate |
 
-- S1: original-study 55-group RMSD aggregate metrics (not the unavailable per-group scatter).
-- S2: original three-model numerical proof coverage plus deterministic oracle.
-- S3: original structured vs report coverage.
-- S4: original claim-family heatmap (count labels transcribed from archived published Figure 7).
-- S5: external gold-label class balance.
-- S6: external model-by-model error taxonomy.
-- S7: external coverage by structured vs report presentation.
-- S8: confidence-based retained-set accuracy.
-- S9: confidence AUROC by presentation.
-- S10: missing decision-token scores.
-- S11: within-collection vs external four-model diagnostic comparison.
+Supplementary figures S1–S11 remain original-source diagnostic plots. Source groups, uncertainty units, missing original per-system coordinates and expert-review limits are documented in the frozen audits. Neither normalized formatting nor oracle-assisted operation repair represents an improved independent LLM proof-selection algorithm.
 
-## Scientific boundaries
+## Output integrity
 
-The original study's 55 individual adsorbate/internal-RMSD coordinate pairs are **not in the source archives available to this package**. We do not reproduce their per-point scatterplot from invented coordinates. Figure S1 reports only the archived median ratio and count above 10. This missing underlying source remains a documented reproducibility gap.
-
-The original study Figures 2, 3, S1–S4 are rendered from **frozen published aggregate values**, not re-scored model outputs. External OC20 and confidence figures instead use previously frozen source-gate and case-level results. The `source` column in each CSV gives provenance. All figures must be labeled consistently in manuscript captions.
-
-Strict parse, outer code-fence normalization, and operation-only repair are separate analysis regimes. The repair is oracle-assisted and must not be interpreted as a learned or autonomous improvement. Token likelihood is not calibrated probability of scientific correctness. The frozen expert chemical audit remains pending.
-
-## Checks
-
-Run `python scripts/verify_inputs.py` to validate source denominators and scientific counts. CSV files and scripts are accompanied by `SHA256SUMS.txt` generated after all figure files were produced.
-
-## Git checkout output policy
-
-The GitHub release tracks PDF and SVG figures as well as all plotting scripts and CSV inputs. PNG plots are generated by `python scripts/build_all.py` and are included in the standalone `publication_figures.zip` distribution, but are not required for a LaTeX build. Python cache files are not tracked. The SHA256 manifest in this checkout covers the tracked figure files.
+`SHA256SUMS.txt` is a publication-asset snapshot. Regenerating PDFs can change binary bytes because of plotting tools and embedded PDF metadata. Scientific CSV inputs remain the authoritative numerical records; run `scripts/verify_inputs.py` for semantic and denominator checks. Figure 1 is editorial artwork, not a measured result.

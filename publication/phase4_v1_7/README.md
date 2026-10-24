@@ -1,45 +1,36 @@
-# GeoScope Phase 4 v1.7: frozen publication snapshot
+# GeoScope — unified publication and frozen research record
 
-This directory **adds** Phase 4 research to the original Phase 3 GeoScope repository without replacing or altering the frozen Phase 3 evaluation, original workflow code, or raw evidence ZIP.
+This directory contains **one research investigation** using two complementary atomic source collections to test whether a selected measurement and mathematical operation physically justify an atomistic claim.
 
-## What is in this snapshot
+The original 55-system UMA-relaxed collection establishes the value and coverage cost of progressively checking evidence definitions; the external 48-system OC20 stored-trajectory collection tests persistent evidence-selection errors, formatting sensitivity, operation errors, scientific abstention and decision-token confidence. The scientific question and licensed-proof definition are shared; the two collections have different output contracts and central scoring comparisons. Their scores are not pooled.
 
-- `manuscript/main.tex`, `sections/`, `references.bib`, and `manuscript/supplementary.tex`: publication-draft source documents.
-- `manuscript/figures/`: 7 main + 11 supplementary prebuilt **PDF** figures.
-- `publication_figures/scripts/` and `data/`: Python plotting code and 18 traceable per-figure CSVs, plus SVG and PDF figure outputs.
-- `audits/`: separately implemented geometry/proof checks and frozen audit summaries.
-- `workflows/`: original source-gate, four-model GPU inference and token-confidence **code and tests**, preserved without large data or weights.
-- `results/`: compact four-model accuracy and confidence tables where available.
-- `expert_review/`: independent reviewer protocol and unfilled response form; there is **no claim expert review has occurred**.
-- `FREEZE_AUDIT_STATUS.md`: validated results, limitations, outstanding checks.
+## Where things are
 
-## Rebuild figures
+| Location | Purpose |
+|---|---|
+| [`manuscript/`](manuscript/) | **Canonical unified manuscript** (main paper + Supplementary Information, figures, and bibliography) |
+| [`publication_figures/`](publication_figures/) | Per-figure CSV records, numerical plotting scripts and output plots; new shared-framework Figure 1 source belongs to `manuscript/figures/` |
+| [`results/`](results/) | Compact frozen external model and confidence tables |
+| [`audits/`](audits/) | Independent external coordinate and proof audits; provenance manifests |
+| [`workflows/`](workflows/) | Original GPU and confidence-run code; historical source, not rewritten |
+| [`expert_review/`](expert_review/) | Expert review protocol and unfilled forms; human scientific review is pending |
+| [`FREEZE_AUDIT_STATUS.md`](FREEZE_AUDIT_STATUS.md) | Completed checks, limits and outstanding reproducibility work |
+| [`../../docs/UNIFIED_STUDY.md`](../../docs/UNIFIED_STUDY.md) | Unified research-question and figure/analysis mapping |
 
-```bash
-python -m pip install numpy matplotlib
-cd publication/phase4_v1_7/publication_figures
+## Build
+
+```sh
+python -m pip install numpy matplotlib reportlab
+cd publication_figures
 python scripts/verify_inputs.py
 python scripts/build_all.py
+cd ../manuscript
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error supplementary.tex
 ```
 
-To compile manuscript and Supplementary Information (requires LaTeX with biblatex/biber):
+The original 55-system scientific raw evidence and CPU reanalysis remain at the **repository root**, and the frozen external scientific results are preserved in their Phase 4 research paths. No experiments were rerun for the unification and no independent original 55-system re-scoring is claimed.
 
-```bash
-cd publication/phase4_v1_7/manuscript
-pdflatex -interaction=nonstopmode main.tex
-biber main
-pdflatex -interaction=nonstopmode main.tex
-pdflatex -interaction=nonstopmode main.tex
-pdflatex -interaction=nonstopmode supplementary.tex
-biber supplementary
-pdflatex -interaction=nonstopmode supplementary.tex
-pdflatex -interaction=nonstopmode supplementary.tex
-```
+## Publication boundaries
 
-## Key results and limitations
-
-External OC20 validation: 48 physical systems; 1,536 questions (960 answerable; 576 insufficient evidence); four models, 6,144 responses. Qwen3-32B-AWQ achieved 567/960 (59.1%) valid scientific proofs **after removing Markdown fences** and a decision-token confidence AUROC of 0.724 on eligible answerable questions. The original strict JSON-format Qwen3-32B score is zero. Oracle-assisted operation repair is only a controlled upper bound, not deployed correction. A deterministic proof enumerator fully resolves the controlled benchmark by construction.
-
-Do **not** interpret the OC20 `OOD` split as an LLM pretraining exclusion guarantee. No model delivered correctly formatted abstentions on insufficient-evidence cases; confidence is not a reliable scientific validity certificate. Earlier original 55-group raw outcome/reproducibility requirements and **independent human review** are flagged in the freeze status. No experimental inference data, human judgments, or source coordinates have been fabricated.
-
-**Status: frozen research data; manuscript under scientific review, not submission-ready.**
+The manuscript is a working scientific draft. The original and external evaluations have different response-format policies. Outer-fence normalization is a formatting diagnostic; operation repair uses an oracle and is not deployed performance. Independent expert chemical review and some complete parent structural archives remain outstanding. Authorship should be confirmed across the main paper and Supplementary Information before submission.
