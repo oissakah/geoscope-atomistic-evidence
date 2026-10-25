@@ -1,9 +1,8 @@
 model,collection,valid,n_answerable,source
-Qwen3-4B,Internal holdout,99,348,v1.3 and v1.4 offline analysis
-Qwen3-4B,External OC20,245,960,v1.6 external four-model analysis
-Phi-4-mini,Internal holdout,40,348,v1.3 and v1.4 offline analysis
-Phi-4-mini,External OC20,97,960,v1.6 external four-model analysis
-SmolLM3-3B,Internal holdout,43,348,v1.3 and v1.4 offline analysis
-SmolLM3-3B,External OC20,143,960,v1.6 external four-model analysis
-Qwen3-32B-AWQ,Internal holdout,206,348,v1.3 and v1.4 offline analysis
-Qwen3-32B-AWQ,External OC20,567,960,v1.6 external four-model analysis
+Qwen3-4B,UMA-relaxed 55-group,312,1100,Verified frozen UMA per-case evaluation; full-definition licensed proofs
+Phi-4-mini,UMA-relaxed 55-group,121,1100,Verified frozen UMA per-case evaluation; full-definition licensed proofs
+SmolLM3-3B,UMA-relaxed 55-group,168,1100,Verified frozen UMA per-case evaluation; full-definition licensed proofs
+Qwen3-4B,OC20 48-group,245,960,Frozen external OC20 four-model fence-normalized summary
+Phi-4-mini,OC20 48-group,97,960,Frozen external OC20 four-model fence-normalized summary
+SmolLM3-3B,OC20 48-group,143,960,Frozen external OC20 four-model fence-normalized summary
+Qwen3-32B-AWQ,OC20 48-group,567,960,Frozen external OC20 four-model fence-normalized summary

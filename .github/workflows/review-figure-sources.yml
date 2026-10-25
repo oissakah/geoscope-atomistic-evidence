@@ -1,0 +1,39 @@
+name: Review source-derived figure CSV datasets
+on:
+  push:
+    paths:
+      - "tools/export_frozen_figure_data.py"
+      - ".github/workflows/review-figure-sources.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+      - name: Verify and export original case-level data
+        run: |
+          python verify_repository.py
+          python reproduce_analysis.py --output-folder "$RUNNER_TEMP/recomputed"
+          PYTHONPATH=. python tools/export_frozen_figure_data.py --out figure_data_review/verified_UMA
+      - name: Preserve all 18 original publication input CSVs and external audit
+        run: |
+          mkdir -p figure_data_review/frozen_figure_inputs
+          cp publication/phase4_v1_7/publication_figures/data/*.csv figure_data_review/frozen_figure_inputs/
+          mkdir -p figure_data_review/external_geometry_audit
+          cp publication/phase4_v1_7/audits/audit_results/coordinate_checks.csv figure_data_review/external_geometry_audit/
+          cp publication/phase4_v1_7/audits/audit_results/INDEPENDENT_AUDIT_SUMMARY.json figure_data_review/external_geometry_audit/
+      - name: Upload research figure-data bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: geoscope-original-and-publication-source-CSVs
+          path: figure_data_review/
+          if-no-files-found: error
+          retention-days: 30
