@@ -1,0 +1,36 @@
+name: Export authentic UMA figure-source CSVs
+on:
+  push:
+    paths:
+      - "tools/export_frozen_figure_data.py"
+      - ".github/workflows/export-figure-data.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - name: Set up Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+      - name: Verify frozen study and compute authentic CSVs
+        run: |
+          python verify_repository.py
+          python reproduce_analysis.py --output-folder "$RUNNER_TEMP/geoscope-recomputed"
+          PYTHONPATH=. python tools/export_frozen_figure_data.py --out exported_figure_data
+      - name: Upload source-derived CSV package
+        uses: actions/upload-artifact@v4
+        with:
+          name: geoscope-UMA-verified-figure-csvs
+          path: exported_figure_data/
+          if-no-files-found: error
+          retention-days: 30
