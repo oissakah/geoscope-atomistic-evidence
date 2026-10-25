@@ -26,7 +26,7 @@ jobs:
         run: |
           python verify_repository.py
           python reproduce_analysis.py --output-folder "$RUNNER_TEMP/geoscope-recomputed"
-          python tools/export_frozen_figure_data.py --out exported_figure_data
+          PYTHONPATH=. python tools/export_frozen_figure_data.py --out exported_figure_data
       - name: Upload source-derived CSV package
         uses: actions/upload-artifact@v4
         with:
